@@ -1,0 +1,76 @@
+
+
+
+// @function p-xToRelativeHght-univ( $p-x , $v-w , $v-h , $clc-height , $neg ) {
+//     $zoom-adjust-value: 1rem;
+//     $global_height: #{'calc( min(#{$v-w}vw - #{$zoom-adjust-value} , #{$v-h}vh - #{$zoom-adjust-value}) + #{$zoom-adjust-value} ) '};
+    
+//     @if ($neg == 1) {
+//         @return #{'calc( -1 * (#{$global_height}) * (#{$p-x} / #{$clc-height})  )'} ;
+//     }
+//     @if ($neg == 0) {
+//         @return #{'calc( (#{$global_height}) * (#{$p-x} / #{$clc-height})  )'} ;
+//     }
+   
+// }
+
+
+@function p-x( $p-x , $v-w , $v-h , $clc-height ) {
+    $zoom-adjust-value: 1rem;
+    $global_height: #{'calc( min(#{$v-w}vw - #{$zoom-adjust-value} , #{$v-h}vh - #{$zoom-adjust-value}) + #{$zoom-adjust-value} ) '};
+    
+    @if ($p-x < 0) {
+        $temp_p-x: (-1 * $p-x);
+        @return #{'calc( -1 * (#{$global_height}) * (#{$temp_p-x} / #{$clc-height})  )'} ;
+    }
+    @else {
+        @return #{'calc( (#{$global_height}) * (#{$p-x} / #{$clc-height}) )'} ;
+    }
+}
+
+
+
+
+
+
+@function rem( $p-x ) {
+    @return #{'#{($p-x / 16)}rem'};
+}
+
+
+// @function p-xToRelativeHght-univ( $p-x , $v-w , $v-h , $clc-height ) {
+//     $zoom-adjust-value: 1rem;
+//     $global_height: #{'calc( min(#{$v-w}vw - #{$zoom-adjust-value} , #{$v-h}vh - #{$zoom-adjust-value}) + #{$zoom-adjust-value} ) '};
+    
+//     @if ($p-x < 0) {
+//         $temp_p-x: (-1 * $p-x);
+//         @return #{'calc( #{$p-x/-16}rem  )'} ;
+//     }
+//     @else {
+//         @return #{'calc(  #{$p-x/16}rem  )'} ;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+// @function p-xToRelativeHght-univ( $p-x , $v-w , $v-h , $clc-height , $neg ) {
+//     // $zoom-adjust-value: 1rem;
+//     // $global_height: #{'calc( min(#{$v-w}vw - #{$zoom-adjust-value} , #{$v-h}vh - #{$zoom-adjust-value}) + #{$zoom-adjust-value} ) '};
+    
+//     $p-x_rem: $p-x / 16;
+
+//     @if ($neg == 1) {
+         
+//         @return #{'calc( -1*#{$p-x_rem}rem )'} ;
+//     }
+//     @if ($neg == 0) {
+//         @return #{'calc( #{$p-x_rem}rem )'} ;
+//     }
+   
+// }

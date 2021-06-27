@@ -1,0 +1,17 @@
+@import "./typography.inc.scss";
+
+
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: $font_family;
+}
+
+input, button {
+    all: unset;
+    cursor: pointer;
+}
+

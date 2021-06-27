@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../blog-card-mobile.inc.scss",
+        "../../style.inc/functions.inc.scss",
+        "../../style.inc/color.inc.scss"
+    ],
+    "names": [],
+    "file": "blog-card-mobile.inc.css"
+}

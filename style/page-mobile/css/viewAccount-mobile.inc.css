@@ -1,0 +1,595 @@
+.main-vAccount {
+  margin: 6rem 0 0;
+  width: 100%;
+  min-height: calc(100vh - 6rem);
+  display: grid;
+  grid-template-columns: 100% 100%;
+  overflow-x: hidden;
+}
+
+.main-vAccount .account-info-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.main-vAccount .account-info-container .uNePi-container {
+  align-self: center;
+  margin: 2.5rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content max-content max-content max-content;
+  align-items: center;
+  justify-items: center;
+  width: 80%;
+  height: max-content;
+}
+
+.main-vAccount .account-info-container .uNePi-container .profile-pic {
+  display: block;
+  height: 9.375rem;
+  width: 9.375rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 0.25rem solid #ffffff;
+}
+
+.main-vAccount .account-info-container .uNePi-container .h-contain {
+  display: block;
+  height: max-content;
+  width: max-content;
+  margin-top: 0.9375rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .h-contain .username {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.main-vAccount .account-info-container .uNePi-container .h-contain .email {
+  font-size: 1.5rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container {
+  justify-self: center;
+  align-self: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 80%;
+  margin-top: 1.5rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .followers-h, .main-vAccount .account-info-container .uNePi-container .follow-info-container .following-h {
+  cursor: pointer;
+  display: block;
+  height: max-content;
+  width: max-content;
+  margin: 0 0.625rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .followers-h h2, .main-vAccount .account-info-container .uNePi-container .follow-info-container .following-h h2 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .followers-h span, .main-vAccount .account-info-container .uNePi-container .follow-info-container .following-h span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .follow-btn {
+  grid-column: 1/3;
+  width: 70%;
+  background-color: #262628;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 450;
+  border-radius: 312.5rem;
+  padding: 0.3125rem 0.625rem;
+  margin-top: 1.25rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .follow-btn:hover {
+  background-color: #ffffff;
+  color: #262628;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .Block-btn {
+  grid-column: 1/3;
+  width: 70%;
+  background-color: #262628;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 450;
+  border-radius: 312.5rem;
+  padding: 0.3125rem 0.625rem;
+  margin-top: 1.25rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .Block-btn:hover {
+  background-color: #ffffff;
+  color: #262628;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .unfollow-btn {
+  grid-column: 1/3;
+  width: 70%;
+  font-size: 1.5rem;
+  border-radius: 312.5rem;
+  padding: 0.125rem 0.4375rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  border: 0.1875rem solid #262628;
+  background-color: #ffffff;
+  color: #262628;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .unfollow-btn:hover {
+  background-color: #262628;
+  color: #ffffff;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .mute-btn {
+  grid-column: 1/3;
+  width: 70%;
+  background-color: #262628;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 450;
+  border-radius: 312.5rem;
+  padding: 0.3125rem 0.625rem;
+  margin-top: 1.25rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .mute-btn svg {
+  margin-right: 0.5rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .follow-info-container .mute-btn:hover {
+  background-color: #ffffff;
+  color: #262628;
+}
+
+.main-vAccount .account-info-container .uNePi-container .sep-line-vacc {
+  width: 100%;
+  height: 0.125rem;
+  background-color: #FFBD21;
+  position: relative;
+  margin-top: 1.5625rem;
+}
+
+.main-vAccount .account-info-container .uNePi-container .sep-line-vacc .sep-bg-color {
+  display: block;
+  width: 100%;
+  height: 25.6875rem;
+  background-color: #FFBD21;
+  position: absolute;
+  bottom: 0;
+  z-index: -2;
+  border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.main-vAccount .account-info-container .uNePi-container .bio {
+  grid-column: 1/2;
+  font-size: 1.17rem;
+  font-weight: 450;
+  padding: 2.5rem 0.9375rem 2.5rem;
+  display: block;
+  width: 100%;
+  border-top: none;
+  border-right: 0.125rem solid #262628;
+  border-left: 0.125rem solid #262628;
+  border-bottom: 0.125rem solid #262628;
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
+  grid-row-gap: 1.875rem;
+  padding: 3.5rem 0 6.25rem;
+  width: 80%;
+  height: max-content;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont h2 {
+  font-size: 1.5rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-row-gap: 3.5rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog {
+  all: unset;
+  color: #262628;
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: max-content max-content;
+  justify-items: center;
+  background-color: #ffffff;
+  height: 26.875rem;
+  width: 18.75rem;
+  box-sizing: content-box;
+  border-top: 0.25rem solid #262628;
+  border-left: 0.25rem solid #262628;
+  border-right: 0.25rem solid #262628;
+  border-bottom: 0.25rem solid #262628;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container {
+  position: relative;
+  height: max-content;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container {
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 13.125rem;
+  width: 18.75rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container .thumbnail-img {
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  height: 18.75rem;
+  width: 16.875rem;
+  transition: 0.2s;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  height: 2.8125rem;
+  width: 18.75rem;
+  background-color: #00000077;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp, .main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  justify-items: center;
+  color: #ffffff;
+  border-radius: 0.3125rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp svg, .main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp svg {
+  display: block;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  margin: 0 0.1875rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp span, .main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp span {
+  display: block;
+  max-width: 5.625rem;
+  font-size: 1.125rem;
+  overflow: hidden;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container {
+  grid-row: 2/3;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  height: 13.75rem;
+  width: 18.75rem;
+  padding: 0.3125rem 0.9375rem 0.9375rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .data-div-1 h3.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .data-div-1 div.line-sep {
+  display: block;
+  height: 0.125rem;
+  width: 16.875rem;
+  background-color: #262628;
+  border-radius: 312.5rem;
+  margin: 0.3125rem 0;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .data-div-1 .desc-container {
+  overflow: hidden;
+  height: 7.1875rem;
+  width: 16.875rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .data-div-1 .desc-container p.desc {
+  height: 8.4375rem;
+  width: 16.875rem;
+  position: relative;
+  font-size: 1.0625rem;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .author-container {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top: 0.4375rem;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 2.1875rem;
+  width: max-content;
+  position: relative;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .author-container .author-img {
+  display: block;
+  height: 2.1875rem;
+  width: 2.1875rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog .blog-data-container .author-container .author-name {
+  height: 2.1875rem;
+  max-width: max-content;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5625rem 0 0.625rem;
+  border-radius: 312.5rem;
+  font-weight: 500;
+  transition: 0.2s;
+  font-size: 1rem;
+  border: 0.125rem solid #262628;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog:hover {
+  box-shadow: 0 0 0.25rem 0.0625rem #777777;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog:hover .thumbnail-container .thumbnail-img {
+  height: 17.5rem;
+  width: 18.75rem;
+}
+
+.main-vAccount .account-info-container .gallery-heading-cont .account-blog-gallery .blog:hover .blog-data-container .author-container .author-name {
+  background-color: #FFBD21;
+}
+
+.main-vAccount .account-info-container-close {
+  margin-left: -100%;
+  height: 0;
+}
+
+.main-vAccount .follow-info-div {
+  width: 100%;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.main-vAccount .follow-info-div .finfo-cover {
+  align-self: center;
+  padding-top: 6.875rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .goback-btn-cover {
+  display: block;
+  height: max-content;
+  width: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 6rem;
+  z-index: 50;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .goback-btn-cover .goback-btn {
+  border: 0.125rem solid #262628;
+  display: block;
+  height: max-content;
+  width: max-content;
+  transition: 0.5s;
+  padding: 0.625rem;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .goback-btn-cover .goback-btn svg {
+  display: block;
+  height: 1.625rem;
+  width: 1.625rem;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover {
+  position: fixed;
+  top: calc( 6rem + 3.125rem  );
+  z-index: 50;
+  display: block;
+  height: max-content;
+  width: 100%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover table.tab-bar, .main-vAccount .follow-info-div .finfo-cover .tab-bar-cover td {
+  border: 0.125rem solid #262628;
+  border-collapse: collapse;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar {
+  height: max-content;
+  width: 100%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .followers-tab, .main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .following-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 3.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .followers-tab span, .main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .following-tab span {
+  display: grid;
+  justify-items: center;
+  height: 65%;
+  width: max-content;
+  padding: 0 0.9375rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .followers-tab span::after, .main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .following-tab span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  display: block;
+  height: 0.125rem;
+  width: 0;
+  background-color: #262628;
+  transition: 0.3s;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .followers-tab:hover span::after, .main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .following-tab:hover span::after {
+  opacity: 1;
+  width: 100%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .active-fTabs {
+  background-color: #262628;
+  color: #ffffff;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-bar-cover .tab-bar .active-fTabs:hover span::after {
+  background-color: #ffffff;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents {
+  display: block;
+  width: 100%;
+  height: max-content;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div {
+  display: none;
+  grid-template-columns: repeat(auto-fit, 85%);
+  grid-auto-rows: max-content;
+  grid-row-gap: 0.5rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin: 2.5rem 0 6.25rem;
+  height: max-content;
+  width: 100%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont {
+  all: unset;
+  color: #28242A;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-column-gap: 0.9375rem;
+  align-items: center;
+  justify-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 35rem;
+  padding: 0.9375rem;
+  background-color: #FFBD21;
+  border-radius: 0.625rem;
+  border: 0.125rem solid #262628;
+  cursor: pointer;
+  padding: 0.3125rem 0.625rem 0.3125rem;
+  border-radius: 0;
+  width: 85%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont .profile-img, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont .profile-img {
+  display: block;
+  height: 4.375rem;
+  width: 4.375rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 0.25rem solid #ffffff;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont .user-name, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont .user-name {
+  justify-self: flex-start;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 1.5rem;
+  width: max-content;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont .user-name::after, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont .user-name::after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 0;
+  background-color: #262628;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont:hover, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont:hover {
+  box-shadow: 0 0 0.25rem 0 #262628;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont:hover .user-name::after, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont:hover .user-name::after {
+  width: 100%;
+}
+
+.main-vAccount .follow-info-div .finfo-cover .tab-contents .follower-div .author-card-cont .user-name, .main-vAccount .follow-info-div .finfo-cover .tab-contents .following-div .author-card-cont .user-name {
+  font-weight: 450;
+  justify-self: flex-start;
+}
+
+.main-vAccount .follow-info-div-open {
+  margin-left: -100%;
+  height: 100%;
+}
+/*# sourceMappingURL=viewAccount-mobile.inc.css.map */

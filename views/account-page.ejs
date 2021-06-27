@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+
+   <!-- F O N T - A W E S O M E - L I N K -->
+   <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+ 
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body id="account_page">
+    
+    <%- include('./views.inc/nav.inc.ejs', {options : true} ); %> 
+
+
+    <main class="main-account">
+
+
+
+
+
+        <div class="container ">
+
+            <form action="/updateaccountinfo" method="POST" enctype="multipart/form-data"  class="edit-form" editMode="off" >
+
+                <div class="profile-imgUp-bg"></div>
+                <div class="profImgUp-cover">
+                    <div class="profile-img-upload-container">
+                    
+                        <img src="" alt="" class="profile-img-preview">
+                        <input type="file" accept="image/*" name="profile-img"  class="profile-img-upload">
+                        <div class="btn-grp">
+                            <div class="save-div"><i class="fas fa-check"></i></div>
+                            <div class="close-div"><i class="fas fa-times"></i></div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <!-- https://images.unsplash.com/photo-1615561010052-381972c6b92c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80 -->
+
+
+                <div class="elements-container">
+
+                    <div class="image-container">
+                        <label for="profile-img" class="profile-img-label">Profile Pic</label>
+                        <img src="<%= ProfilePicBase64String %> " alt="" class="profile-img" name="profile-img">
+                    </div>
+
+                    <div class="info-container-outer">
+                        <div class="info-container-inner">
+                            
+                            <div class="userName-container">
+                                <label for="userName" class="label">User Name</label>
+                                <span role="textbox" name="userName" class="span-userName display-none"><%= UserName %> </span>
+                                <input type="text" name="userName" class="input-userName display-none">
+                            </div>
+                            
+                            <!-- <div class="email-container">
+                                <label for="email" class="label">Email</label>
+                                <span role="textbox" name="email" class="span-email display-none">qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm</span>
+                                <input type="text" name="email" class="input-email display-none">
+                            </div> -->
+                            
+                            <div class="bio-container">
+                                <label for="bio" class="label">Bio</label> 
+                                <span role="textbox" name="bio" class="span-bio">
+
+                                    <%= Bio %> 
+                                    
+                                </span> 
+                                <!-- <span role="textbox" name="bio" class="span-bio-edit display-none" contenteditable="true"></span> -->
+                                
+                                <textarea type="text" name="bio" class="input-bio display-none"></textarea>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- <form action="#" class="edit-form">
+                        <input type="text" name="userName" class="input-userName">
+                        <input type="text" name="email" class="input-email">
+                        <textarea type="text" name="bio" class="input-bio"></textarea>
+                    </form> -->
+                </div>
+                
+                <div class="btn-container">
+                    <button class="edit-btn" type="button">
+                        <i class="fas fa-pen"></i>
+                        Edit
+                    </button>
+
+                    <button class="save-btn   display-none" type="submit">
+                        <i class="far fa-save"></i>
+                        Save
+                    </button>
+
+                    <button class="cancel-btn display-none" type="button">
+                        <i class="fas fa-ban"></i>
+                        Cancel
+                    </button>
+                </div> 
+            </form>
+
+
+
+
+            <div class="insight-container">
+                <h1>insights</h1>
+
+                <div class="follow-info-container">
+                    <div class="followers-h">
+                        <h2><%= followers_count %></h2>
+                        <span>Followers</span>
+                    </div>
+
+                    <div class="following-h">
+                        <h2><%= following_count %></h2>
+                        <span>Following</span>
+                    </div>
+                </div>
+
+
+                <div class="blog-info-container">
+                    <div class="no-of-blogs-div">
+                        <h2><%= noBlogs %></h2>
+                        <span>No of Blogs</span>
+                    </div>
+                    <div class="no-of-views-div">
+                        <h2><%= noViews %></h2>
+                        <span>No of views</span>
+                    </div>
+                    <div class="no-of-Likes-div">
+                        <h2><%= noLikes %></h2>
+                        <span>No of Likes</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="posts-container">
+                <h1>posts</h1>
+
+                <div class="account-blog-gallery">
+                
+                    <%  
+                    var img        =  "https://images.unsplash.com/photo-1618221227897-57302c9460b6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80" ;
+                    var desc       =  "Culpa esse voluptate cillum Lorem reprehenderit magna adipisicing pariatur commodo proident laboris et. Ea ea cupidatat commodo enim eu culpa aute mollit amet sunt nisi. Culpa fugiat eu consectetur labore ipsum ea aute minim. Enim eiusmod ullamco labore commodo pariatur laboris enim anim";
+                    var likes      =  "153";
+                    var title      =  "How to cook";
+                    var views      =  "364";
+                    var authorImg  =  "https://images.unsplash.com/photo-1618216724394-f053be6b6f53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"; 
+                    var authorName =  "Levi Ackerman";
+
+                    for (var i = 0 ; i < 0 ; i++) { 
+                    %>
+
+                        <%-
+                        include("./views.inc/blog_card.inc.ejs",
+                            {
+                                img         :   img,
+                                desc        :   desc,
+                                likes       :   likes,
+                                title       :   title,
+                                views       :   views,
+                                authorImg   :   authorImg,
+                                authorName  :   authorName,
+                                blogId      :   i+1
+                            }                    
+                        );
+                        %>
+
+                    <%
+                    }
+                    %>
+                
+                    
+                            
+                    <button class="loading-btn"><i class="fas fa-redo"></i></button>    
+                </div>
+            </div>
+
+
+
+
+            
+        </div>
+
+        
+
+
+
+
+
+        <div class="finfo-cover ">
+
+            <div class="goback-btn-cover">
+                <button class="goback-btn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div class="tab-bar-cover">
+                <table class="tab-bar">
+                    <tr>
+                        <td><button id="follower-data" class="followers-tab active-fTabs"><span>Followers</span></button></td>
+                        <td><button id="following-data" class="following-tab "><span>Following</span></button></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+
+            <div class="tab-contents">
+
+                <div id="follower-data" class="follower-div">
+                    <%
+                    var profileImg = "https://images.unsplash.com/photo-1618216724394-f053be6b6f53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+                    for (var i=0 ; i<0 ; i++) { 
+                        var userName = "Annei arlet"+((1+i));    
+                    %>
+                        <%-
+                        include('views.inc/followersAuthorCard.inc.ejs', 
+                            {
+                                profileImg  : profileImg,
+                                userName    : userName,
+                                authorID    : (i+1),
+                            }
+                        );
+                        %>
+                    <%
+                    }
+                    %> 
+
+
+
+
+
+                    <button class="loading-btn"><i class="fas fa-redo"></i></button>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div id="following-data" class="following-div">
+                    <%
+                    var profileImg = "https://images.unsplash.com/photo-1618983390955-ab63296aa1b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+                    for (var i=0 ; i<0 ; i++) { 
+                        var userName = "Erwin smith"+i;  
+                        var mute =  false;
+
+                        if ((  (i+1) % 2) == 0 )
+                            mute =  true;
+                    %>
+                        <%-
+
+                        include('views.inc/followingAuthorCard.inc.ejs', 
+                            {
+                                profileImg  : profileImg,
+                                userName    : userName,
+                                authorID    : (i+1),
+                                muted       : mute
+                            }
+                        );
+                        %>
+
+                        
+                        %>
+                    <%
+                    }
+                    %> 
+
+
+
+
+                    
+                    <button class="loading-btn"><i class="fas fa-redo"></i></button>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </main>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="module" src="/script.js"></script>
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,221 @@
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/typography.inc.scss";
+@import "../style.inc/variables.inc.scss";
+
+
+$main-login-vw: 80;
+
+.main-login {
+
+    margin-top: $nav-height;
+    min-height: #{'calc(100vh - #{$nav-height})'};
+    width: 100%;
+    position: relative;
+    overflow-y: hidden;
+
+    .background {
+        position: absolute;
+        z-index: -99;
+        height: 200vh;
+        width:  100%;
+        overflow: hidden;    
+    }
+
+
+    .login-signup-form {
+        width:  p-x( 461 , $main-login-vw , 100 , 760 );
+        background-color: $theme_fontBlack;
+        color: $white;
+        box-shadow: 0 0 p-x( 4 , $main-login-vw , 100 , 760 ) 0 gray;
+        position: absolute;
+
+        border-radius: p-x( 5 , $main-login-vw , 100 , 760 ) ;
+
+        right: p-x( 130 , $main-login-vw , 100 , 760 );
+        top:   p-x( 90 , $main-login-vw , 100 , 760 );
+
+
+
+        .tabs {
+            display: flex;
+
+            & > div {
+                height: p-x( 55 , $main-login-vw , 100 , 760 );
+                width:  p-x( 115 , $main-login-vw , 100 , 760 );
+                
+                cursor: pointer;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: p-x( 42 , $main-login-vw , 100 , 760 );
+                    display: block;
+                    height: p-x( 1.5 , 100 , 100 , 760 );
+                    width: 0;
+                    background-color: $white;
+                    transition: 0.2s;
+
+                    border-radius: p-x( 5000 , $main-login-vw , 100 , 760 )
+                }
+
+                & > span {
+                    font-size: p-x( 17 , $main-login-vw , 100 , 760 );
+                }
+
+                &:hover {
+                    &::after{
+                        width: p-x( 56 , $main-login-vw , 100 , 760 );
+                    }
+                }
+
+            }
+
+            .active-tab {
+                background-color: $theme_gold;
+                color: $theme_fontBlack;
+                &::after{
+                    background-color: $theme_fontBlack;
+                }
+            }
+        }
+
+
+
+        .tab-content {
+            width: 100%;
+            background-color: $theme_gold;
+            display: flex;
+            justify-content: center;
+            padding: p-x( 45 , $main-login-vw , 100 , 760 ) 0 p-x( 31 , $main-login-vw , 100 , 760 ) 0 ;
+            
+            .form-log, .form-sup {
+                width: min-content;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .userName, .password {
+                    height: p-x( 40 , $main-login-vw , 100 , 760 );
+                    width:  p-x( 370 , $main-login-vw , 100 , 760 );
+
+                    background-color: $white;
+                    color: $theme_fontBlack;
+                    margin-bottom:  p-x( 33 , $main-login-vw , 100 , 760 );
+                    border-radius: p-x( 5 , $main-login-vw , 100 , 760 );
+
+                    font-size: p-x( 16 , $main-login-vw , 100 , 760 );
+                    padding: 0 p-x( 10 , $main-login-vw , 100 , 760 );
+                }
+                 
+                .submit-btn {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $white;
+
+                    height: p-x( 35 , $main-login-vw , 100 , 760 );
+                    width:  p-x( 213 , $main-login-vw , 100 , 760 );
+
+                    background-color: $theme_fontBlack;
+                    margin-bottom:  p-x( 30 , $main-login-vw , 100 , 760 );
+
+                    font-size: p-x( 16 , $main-login-vw , 100 , 760 );
+                    border-radius: p-x( 18 , $main-login-vw , 100 , 760 );
+                    transition: 0.2s;
+                    
+                    &:hover {
+                        background-color: $white;
+                        color: $theme_primaryBlack;
+                    }
+                }
+
+
+                .forgot-passwrd-link {
+                    color: $theme_fontBlack;
+                    text-decoration: none;
+                    font-size: p-x( 20 , $main-login-vw , 100 , 760 );
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        height: p-x( 1.5 , $main-login-vw , 100 , 760 );
+                        width: p-x( 163 , $main-login-vw , 100 , 760 );
+                        background-color: $theme_fontBlack;
+                        margin-top: p-x( 3 , $main-login-vw , 100 , 760 );
+                        transition: 0.2s;
+                        opacity: 0;
+
+                        border-radius: p-x( 5000 , $main-login-vw , 100 , 760 );
+                    }
+                    &:hover {
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+                
+                }
+            }
+
+
+            .form-log-sup { 
+                display: none;
+            }
+            
+
+
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+.footer-login {
+    // min-height:  p-x( 230 , $main-login-vw , 100 , 760 );
+    background-color: $theme_primaryBlack;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    h2 {
+        display: block;
+        padding: p-x( 30 , $main-login-vw , 100 , 760 );
+        font-weight: 400;
+        color: $white;
+    }
+}
+
+

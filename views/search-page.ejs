@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+
+
+    <!-- F O N T - A W E S O M E - L I N K -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/style.css">
+
+
+</head>
+<body id="search_page">
+    <%- include('./views.inc/nav.inc.ejs', {options : true} ); %> 
+
+
+
+    <main class="main-search">
+        <div class="search-page-container">
+
+            <section class="search-section">
+
+                <div class="searcbar-sugg-container">
+
+                    <div class="searchbar-container">
+                        <input type="text" class="search-input"><button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+
+                    <!-- <div class="suggestions">
+                        <ul class="sugg-list">
+                            
+
+                        </ul>
+                    </div> -->
+
+
+                </div>
+            </section>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <section class="search-result">
+
+
+                <div class="tab-container">
+                    <button id="result-blogs" class="result-blogs-btn   active-tab "><span>Blogs</span></button>
+                    <button id="result-topics" class="result-topics-btn   "><span>Topics</span></button>
+                    <button id="result-author" class="result-author-btn   "><span>Authors</span></button>
+                </div>
+
+
+
+                <div class="tab-content">
+
+                
+                    <div id="result-topics" class="result-topics-gallery">
+                        <% 
+                        for (var i=0; i<0; i++) {
+                        %> 
+                            <a href="<%= i %>" class="topic-cover">
+                                <h2>#hashtags</h2>
+                            </a>
+                        <%
+                        }
+                        %>
+                    </div>
+    
+    
+    
+    
+    
+                    <div id="result-author" class="result-author-gallery">
+                        <%
+                        var profileImg = "https://images.unsplash.com/photo-1618216724394-f053be6b6f53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
+                        
+    
+    
+                        for (var i=0 ; i<0 ; i++) { 
+                            var userName = "Annei arlet"+i;    
+                        %>
+                        
+                            <%-
+                            include('views.inc/authorCard.inc.ejs', 
+                                {
+                                    profileImg  : profileImg,
+                                    userName    : userName,
+                                    authorID    : i+1,
+                                }
+                            );
+                            %>
+                        <%
+                        }
+                        %> 
+    
+                    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                    <div id="result-blogs" class="result-blog-gallery">
+                        <%
+                        var img        =  "https://images.unsplash.com/photo-1618452808296-6f9cb49a0c2a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=649&q=80";
+                        var desc       =  "Culpa esse voluptate cillum Lorem reprehenderit magna adipisicing pariatur commodo proident laboris et. Ea ea cupidatat commodo enim eu culpa aute mollit amet sunt nisi. Culpa fugiat eu consectetur labore ipsum ea aute minim. Enim eiusmod ullamco labore commodo pariatur laboris enim anim";
+                        var likes      =  "153";
+                        var views      =  "364";
+                        var title      =  "How to cook";
+                        var authorName =  "Willy Tybur";
+                        var authorImg  =  "https://images.unsplash.com/photo-1618216724394-f053be6b6f53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"; 
+                        
+                        for (var i=0; i<0; i++) {
+                        %>
+    
+                            <%-
+                            include('./views.inc/blog_card.inc.ejs',
+                                {
+                                    img         :   img,
+                                    desc        :   desc,
+                                    likes       :   likes,
+                                    views       :   views,
+                                    title       :   title,
+                                    authorName  :   authorName,
+                                    authorImg   :   authorImg,
+                                    blogId      :   i+1
+                                }
+                            );
+                            %>
+    
+    
+                        <%
+                        }
+                        %>
+    
+                    </div>
+    
+    
+    
+    
+                </div>
+
+
+
+
+
+            </section>
+
+
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="module" src="/script.js"></script>
+    
+</body>
+</html>

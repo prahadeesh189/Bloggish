@@ -1,0 +1,223 @@
+
+@import "../style.inc/variables.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/typography.inc.scss";
+
+
+
+main.main-getStarted {
+    padding: 0 rem( 18 );
+    min-height: #{'calc(100vh - #{$nav-mobile-height})'};
+    margin-top: rem( 96 );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .main-getStarted-container {
+        display: flex;
+        justify-content: center;
+        border-left:  2px solid $theme_primaryBlack;
+        border-right: 2px solid $theme_primaryBlack;
+        height: 100%;
+        width: 90%;
+        // min-height: inherit;
+
+
+        .main-getStarted-container-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: max-content;
+            width: 72%;
+            min-height: inherit;
+            padding: 64px 0;
+
+
+
+            form {
+                
+                .profile-img-upload-container {
+                    display: grid;
+                    grid-template-rows: max-content max-content;
+                    grid-row-gap: 32px;
+                    align-items: center;
+                    justify-content: center;
+                    justify-items: center;
+
+
+                    img.profile-img {
+                        display: block;
+                        height: rem( 150 );
+                        width:  rem( 150 );
+                        border-radius: 50%;
+                        object-fit: cover;
+                        object-position: center;
+            
+                        border: rem( 4 ) solid $theme_gold;        
+                    }
+
+
+
+                    input.profile-img-input {
+                        display: block;
+    
+                        border-bottom: 1px solid $theme_primaryBlack;
+                        width: max-content;
+                        font-size: 20px;
+                        padding: 0 6px 5px;
+    
+                        &::-webkit-file-upload-button {
+                            margin-right: 10px;
+                            cursor: pointer;
+                            background-color: $theme_gold;
+                            font-family: $font_family;
+                            font-size: 16px;
+                            outline: none;
+                            border: none;
+                            border-radius: 5000px;
+                            height: 30px;
+                            width: max-content;
+                            padding: 0    15px;
+    
+                            &:hover {
+                                background-color: $theme_primaryBlack;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+
+
+                .username-container {
+                    display: block;
+                    height: max-content;
+                    width:  100%;
+                    margin-top: 32px;
+
+                    h2 {
+                        font-size: 24px;
+                        font-weight: 450;
+                    }
+
+
+                    input.userName {
+                        font-size:  18px;
+                        border-radius:  3px;
+                        padding: 10px;
+                        // height:  44px;
+                        width:  100%;
+                        background-color: $white;
+                        border:  1px solid $theme_primaryBlack;
+                    }
+                }
+
+
+
+
+                .bio-container {
+                    display: block;
+                    height: max-content;
+                    width:  100%;
+                    margin-top: 32px;
+
+
+                    h2 {
+                        font-size: 24px;
+                        font-weight: 450;
+                    }
+
+
+
+                    textarea.input-bio {
+                        font-size:  18px;
+                        border-radius:  3px;
+                        // padding: 8px;
+                        height:  44px;
+                        // width:  464px ;
+                        background-color: $white;
+                        border:  1px solid $theme_primaryBlack;
+                        min-height:  175px;
+                        width:  100%;
+                        resize: none;
+                        box-sizing: content-box;
+                        padding:  10px;
+                        outline: none;
+        
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+                }
+
+
+                button.submit-btn {
+                    
+
+
+                    display: block;
+                    text-align: center;
+                    width: 100px;
+                    text-transform: capitalize;
+                    border-radius: 5000px;
+                    background-color: $theme_gold;
+                    padding: 8px;
+                    font-size: 18px;
+                    margin-top: 32px;
+
+                    &:hover {
+                        background-color: $theme_primaryBlack;
+                        color: $white;
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,309 @@
+
+@import "../style.inc/variables.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/blog-card.inc.scss";
+
+
+.main-viewpage {
+    $main-viewpage-vw: 60;
+
+    min-height: #{'calc(100vh - #{$nav-height})'} ;
+    margin-top: $nav-height;
+    background-color: $white;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    
+    .view-container {
+        display: grid;
+        grid-template-rows: max-content max-content max-content;
+        grid-row-gap: p-x( 30 , $main-viewpage-vw , 100 , 760 );
+        justify-items: center;
+
+        border-left:  p-x( 2 , $main-viewpage-vw , 100 , 760 ) solid $theme_primaryBlack;
+        border-right: p-x( 2 , $main-viewpage-vw , 100 , 760 ) solid $theme_primaryBlack;
+    
+
+        min-height: #{'calc(100vh - #{$nav-height})'};
+        height: 100%;
+        width: 80%;
+        background-color: $white;
+        padding-bottom: p-x( 250 , $main-viewpage-vw , 100 , 760 );
+
+
+
+
+        .title-opt-container {
+            .title-bg-container {
+                display: block;
+                height: p-x( 300 , $main-viewpage-vw , 100 , 760 );
+                width:  p-x( 850 , $main-viewpage-vw , 100 , 760 );
+                position: relative;
+    
+                img.bg-img {
+                    display: block;
+                    height: p-x( 300 , $main-viewpage-vw , 100 , 760 );
+                    width:  p-x( 850 , $main-viewpage-vw , 100 , 760 );
+                    object-fit: cover;
+                    object-position: center;
+                }
+    
+                .title-cont {
+                    display: grid;
+                    align-items: center;
+                    justify-items: center;
+                    min-height: p-x( 300 , $main-viewpage-vw , 100 , 760 );
+                    width:  p-x( 850 , $main-viewpage-vw , 100 , 760 );
+                    position: absolute;
+                    top: 0;
+    
+                    h1 {
+                        display: block;
+                        height: max-content;
+                        width: max-content;
+                        max-height: p-x( 200 , $main-viewpage-vw , 100 , 760 );
+                        max-width: p-x( 750 , $main-viewpage-vw , 100 , 760 );
+                        overflow: hidden;
+    
+                        text-transform: capitalize;
+
+                        font-size: p-x( 36 , $main-viewpage-vw , 100 , 760 );
+                        font-weight: 600;
+                        background-color: #FFFFFF90;
+                        padding: p-x( 20 , $main-viewpage-vw , 100 , 760 ) p-x( 55 , $main-viewpage-vw , 100 , 760 );
+                    }
+                }
+            }
+
+            .author-opt-outer-cont {
+                display: flex;
+                justify-content: center;
+                width:  p-x( 850 , $main-viewpage-vw , 100 , 760 );
+
+                .author-opt-inner-cont {
+                    display: grid;
+                    grid-template-columns: 1fr max-content max-content;
+                    grid-column-gap: p-x( 30 , $main-viewpage-vw , 100 , 760 );
+                    z-index: 10;
+                    width:  p-x( 780 , $main-viewpage-vw , 100 , 760 );
+                    text-decoration: none;
+                    color: $theme_primaryBlack;
+
+                    margin-top: p-x( -24 , $main-viewpage-vw , 100 , 760 );
+
+                    .author-container {
+                        cursor: pointer;
+                        align-self: flex-end;
+            
+                        display: flex;
+                        flex-direction: row-reverse;
+                        height:  p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                        width:   max-content;
+                        border-radius: p-x( 5000 , $main-viewpage-vw , 100 , 760 );
+                        background-color: $white;
+
+                        box-sizing: content-box;
+                        border: p-x( 3 , $main-viewpage-vw , 100 , 760 ) solid $white;
+
+                        text-decoration: none;
+                        color: $theme_primaryBlack;
+                        position: relative;
+                    
+                        .author-img {
+                            display: block;
+                            height:  p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                            width:   p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                            object-fit: cover;
+                            object-position: center;
+                            border-radius: 50%;
+                            position: absolute;
+                        }
+                        .author-name {
+                            height:  p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                            max-width: max-content;
+                            background-color: $theme_gold;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0 p-x( 6+42 , $main-viewpage-vw , 100 , 760 ) 0 p-x( 13 , $main-viewpage-vw , 100 , 760 );
+                            border-radius:  p-x( 5000 , $main-viewpage-vw , 100 , 760 );
+                            font-weight: 500;   
+                            transition: 0.2s;
+                            font-size:  p-x( 18 , $main-viewpage-vw , 100 , 760 );
+                            
+                        }
+            
+                        &:hover {
+                            box-shadow: 0 0 p-x( 4 , $main-viewpage-vw , 100 , 760 ) 0 $theme_primaryBlack;
+
+                            
+                            // .author-name {
+                            //     // background-color: $white;
+                            //     box-shadow: 0 0 4p 0 $theme_primaryBlack;
+                            // }
+                        }
+                    }
+
+
+
+
+
+
+
+
+
+
+                    button.edit-btn {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        // margin-right: p-x( 35 , $main-viewpage-vw , 100 , 760 );
+
+                        height: p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                        max-width:  max-content;
+                        padding: 0 p-x( 20 , $main-viewpage-vw , 100 , 760 );
+                        background-color: $theme_gold;
+                        border-radius: p-x( 5000 , $main-viewpage-vw , 100 , 760 );
+
+                        border: p-x( 3 , $main-viewpage-vw , 100 , 760 ) solid $white;
+
+                        font-size: p-x( 18 , $main-viewpage-vw , 100 , 760 );
+
+                        svg {
+                            display: block;
+                            height: p-x( 17 , $main-viewpage-vw , 100 , 760 );
+                            width:  p-x( 17 , $main-viewpage-vw , 100 , 760 );
+                            margin: 0 p-x( 7 , $main-viewpage-vw , 100 , 760 );
+                        }
+
+                        &:hover {
+                            // background-color: $white;
+                            box-shadow: 0 0 p-x( 4 , $main-viewpage-vw , 100 , 760 ) 0 $theme_primaryBlack;
+                        }
+                    }
+
+                    button.like-btn {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        height: p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                        width:  p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                        background-color: $white;
+                        border-radius: 50%;
+
+                        border: p-x( 3 , $main-viewpage-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+
+                        svg {
+                            display: block;
+                            height: p-x( 20 , $main-viewpage-vw , 100 , 760 );
+                            width:  p-x( 20 , $main-viewpage-vw , 100 , 760 );
+                        }
+
+                        &:hover {
+                            // background-color: $white;
+                            box-shadow: 0 0 p-x( 4 , $main-viewpage-vw , 100 , 760 ) 0 $theme_primaryBlack;      
+                        }
+                    }
+
+                    button.liked-class {
+                        background-color: $theme_gold;
+                        border: p-x( 3 , $main-viewpage-vw , 100 , 760 ) solid $white;
+                    }
+
+
+                }
+            }    
+        }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .view-content {
+            display: block;
+            // min-height: p-x( 500 , $main-viewpage-vw , 100 , 760 );
+            height: max-content;
+            width: p-x( 850 , $main-viewpage-vw , 100 , 760 );
+            padding: p-x( 10 , $main-viewpage-vw , 100 , 760 );
+
+            p.p-view-content {
+                font-size: p-x( 18 , $main-viewpage-vw , 100 , 760 );
+                // word-break: break-all;
+                padding-bottom: p-x( 40 , $main-viewpage-vw , 100 , 760 );
+                border-bottom: p-x( 1.5 , $main-viewpage-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+                white-space: pre-wrap;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        .hashtag-display-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+
+            width: p-x( 850 , $main-viewpage-vw , 100 , 760 );
+            padding: p-x( 10 , $main-viewpage-vw , 100 , 760 );
+
+
+            a {
+                text-decoration: none;
+                color: $theme_primaryBlack;
+                h4 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: max-content;
+                    width: max-content;
+                    font-weight: 450;
+                    padding: p-x( 5 , $main-viewpage-vw , 100 , 760 )  p-x( 10 , $main-viewpage-vw , 100 , 760 );
+                    border: p-x( 2 , $main-viewpage-vw , 100 , 760 )  solid $theme_primaryBlack;
+                    border-radius: p-x( 5000 , $main-viewpage-vw , 100 , 760 );
+                    margin: p-x( 10 , $main-viewpage-vw , 100 , 760 );
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+    }
+}
+
+

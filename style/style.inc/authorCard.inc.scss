@@ -1,0 +1,68 @@
+
+
+@mixin author-card-cont( $main-explore-vw ) {
+    all: unset;
+
+    color: $theme_fontBlack;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: p-x( 15 , $main-explore-vw , 100 , 760 );
+    align-items: center;
+    justify-items: center;
+
+    box-sizing: border-box;
+    width: p-x( 329 , $main-explore-vw , 100 , 760 );
+    padding: p-x( 15 , $main-explore-vw , 100 , 760 );
+    background-color: $theme_gold;
+    border-radius: p-x( 10 , $main-explore-vw , 100 , 760 );
+
+    border: p-x( 2 , $main-explore-vw , 100 , 760 ) solid $theme_primaryBlack ;
+
+    cursor: pointer;
+
+    .profile-img {
+        display: block;
+        height: p-x( 80 , $main-explore-vw , 100 , 760 );
+        width:  p-x( 80 , $main-explore-vw , 100 , 760 );
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+        border: p-x( 4 , $main-explore-vw , 100 , 760 ) solid $white;
+    }
+    .user-name {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+
+        // height: max-content;
+        font-size: p-x( 24 , $main-explore-vw , 100 , 760 );
+        width: max-content;
+        max-width: max-content;
+        overflow: hidden;
+
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            height: p-x( 2 , $main-explore-vw , 100 , 760 );
+            width:  0;
+            background-color: $theme_primaryBlack;
+            transition: 0.3s;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 p-x( 4 , $main-explore-vw , 100 , 760 ) 0 $theme_primaryBlack;
+
+        .user-name { 
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+}

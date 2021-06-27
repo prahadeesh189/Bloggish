@@ -1,0 +1,107 @@
+.main-login {
+  padding: 6rem 1.125rem;
+  min-height: calc(100vh - 6rem);
+  margin-top: 6rem;
+}
+
+.main-login .login-signup-form {
+  display: block;
+  width: 100%;
+  background-color: #FFBD21;
+}
+
+.main-login .login-signup-form .tabs {
+  height: 3.5rem;
+  width: 100%;
+  display: grid;
+  background-color: #262628;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: max-content;
+}
+
+.main-login .login-signup-form .tabs .login-tab, .main-login .login-signup-form .tabs .signUp-tab {
+  cursor: pointer;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.main-login .login-signup-form .tabs .signUp-tab {
+  cursor: pointer;
+  grid-column: 2/3;
+}
+
+.main-login .login-signup-form .tabs .active-tab {
+  background-color: #FFBD21;
+  color: #262628;
+}
+
+.main-login .login-signup-form .tab-content {
+  background-color: #FFBD21;
+  padding: 2.25rem;
+  grid-row-gap: 2.25rem;
+}
+
+.main-login .login-signup-form .tab-content .userName, .main-login .login-signup-form .tab-content .password {
+  background-color: #ffffff;
+  height: 2.875rem;
+  width: 100%;
+  border-radius: 0.1875rem;
+  padding: 0 0.625rem;
+  font-size: 1.125rem;
+}
+
+.main-login .login-signup-form .tab-content .submit-btn {
+  height: 2.5rem;
+  width: 70%;
+  background-color: #262628;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 312.5rem;
+}
+
+.main-login .login-signup-form .tab-content .forgot-passwrd-link {
+  color: #262628;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+.main-login .login-signup-form .tab-content .form-log {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 2.25rem;
+}
+
+.main-login .login-signup-form .tab-content .form-sup {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 2.25rem;
+}
+
+.main-login .login-signup-form .tab-content .form-log-sup {
+  display: none;
+}
+
+.footer-login {
+  background-color: #262628;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-login h2 {
+  display: block;
+  padding: 1.875rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+/*# sourceMappingURL=login-mobile.inc.css.map */

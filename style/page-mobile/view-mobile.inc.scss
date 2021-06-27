@@ -1,0 +1,231 @@
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/variables.inc.scss";
+
+
+
+
+
+
+
+.main-viewpage {
+    min-height: #{'calc( 100vh - #{$nav-mobile-height} )'};
+    margin-top: rem( 96 );
+    width: 100%;
+
+    .view-container {
+
+
+        .title-opt-container {
+            
+
+            .title-bg-container {
+                position: relative;
+
+                img.bg-img {
+                    display: block;
+                    height: rem( 248 );
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            
+                .title-cont {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: rem( 248 );
+                    width: 100%;
+                    position: absolute;
+
+                    h1 {
+                        display: block;
+                        height: max-content;
+                        width:  max-content;
+                        max-width: 90%;
+                        max-height: 75%;
+                        padding: rem( 5 ) rem( 15 );
+                        margin-bottom: rem( 16 );
+                        background-color: #FFFFFF90;
+                        
+                        text-transform: capitalize;
+
+                        overflow-y: scroll;
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        word-break: break-all;
+                        font-size: rem( 32 );                            
+                        color: $theme_primaryBlack;
+                    }
+
+
+
+
+                }
+            }
+
+
+            .author-opt-outer-cont {
+                display: grid;
+                justify-items: center;
+
+                .author-opt-inner-cont {
+                    display: grid;
+                    width: 90%;
+                    grid-template-columns: 1fr max-content max-content;
+                    grid-column-gap: rem( 8 );
+                    margin-top: rem( -24 );
+                    z-index: 9;
+
+                    .author-container {
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        width: max-content;
+                        background-color: $theme_gold;
+                        border-radius: rem( 5000 );
+                        overflow: hidden;
+                        border: rem( 2 ) solid $white;
+                        text-decoration: none;
+                        color: $theme_primaryBlack;
+
+                        img.author-img {
+                            display: block;
+                            height: rem( 44 );
+                            width:  rem( 44 );
+                            object-fit: cover;
+                            object-position: center;
+                            border-radius: 50%;
+                        }
+                        .author-name {
+                            display: grid;
+                            align-items: center;
+                            justify-items: center;
+                            height: rem( 44 );
+                            padding: 0 rem( 10 ) 0 rem( 15 );
+                            font-size: rem( 16 );
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 rem( 4 ) 0 $theme_primaryBlack
+                        }
+                    }
+
+
+                    .edit-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: rem( 44 );
+                        border: rem( 2 ) solid $white;
+                        background-color: $theme_gold;
+                        border-radius: rem( 5000 );
+                        width: rem( 90 );
+
+                        font-size: rem( 18 );
+
+                        svg {
+                            display: block;
+                            height: rem( 16 );
+                            width:  rem( 16 );
+                            margin-right: rem( 5 );
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 rem( 4 ) 0 $theme_primaryBlack
+                        }
+                    }
+                    .like-btn {
+                        display: grid;
+                        place-items: center;
+                        height: rem( 44 );
+                        width: rem( 44 );
+                        border: rem( 2 ) solid $theme_primaryBlack;
+                        background-color: $white;
+                        border-radius: rem( 5000 );
+
+                        svg {
+                            display: block;
+                            height: rem( 20 );
+                            width:  rem( 20 );
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 rem( 4 ) 0 $theme_primaryBlack
+                        }
+                    }
+
+                    button.liked-class {
+                        border: rem( 2 ) solid $white;
+                        background-color: $theme_gold;
+                    }
+                }
+            }
+            
+
+
+
+        }
+
+        .view-content {
+            display: block;
+            margin: 0 rem( 18 ) rem( 18 ) rem( 18 );
+
+            .p-view-content {
+                display: block;
+                font-size: rem( 18 );
+                padding: rem( 16 ) 0 ;
+                border-bottom: rem( 2 ) solid $theme_primaryBlack;
+
+                white-space: pre-wrap;
+            }
+        }
+        
+
+
+
+
+        .hashtag-display-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: rem(56);
+
+            padding: rem( 10 );
+
+            a {
+                text-decoration: none;
+                color: $theme_primaryBlack;
+                
+                h4 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: max-content;
+                    width: max-content;
+                    font-weight: 450;
+                    padding: rem( 5 )  rem( 10 );
+                    border:  rem( 2 )  solid $theme_primaryBlack;
+                    border-radius: rem( 5000 );
+                    margin: rem( 10 );
+                }
+            }
+        }
+
+
+
+        
+    }
+
+
+
+
+
+}
+

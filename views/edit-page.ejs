@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+
+
+    <!-- F O N T - A W E S O M E - L I N K -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+ 
+    <link rel="stylesheet" href="/style.css">
+
+
+</head>
+<body id="edit_page">
+    <%- include('./views.inc/nav.inc.ejs', {options : true} ); %> 
+
+
+    <main class="main-edit">
+        <div class="write-container">
+
+            <div class="element-container">
+
+                <h1>Edit Blog</h1>
+
+                               
+    
+                    
+
+                <div class="components-container">
+                    <form action="/updateblog" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="bid" id="blogID" value="<%= data.bid %>">
+
+                        <div class="blogTitle-container">
+                            <label for="blogTitle" class="label">Blog Title</label>
+                            <input type="text" name="blogTitle" class="input-blogTitle" value="<%= data.title %>">
+                        </div>
+                        
+                        <div class="thumbnail-container">
+                            <label for="thumbnail" class="label">Thumbnail</label>
+                            <input type="file" accept="image/*" name="thumbnail"  class="input-thumbnail">
+                            <img src="<%= data.thumbnailPic %>" alt="" class="thumbImg-preview">
+                        </div>
+                        
+                        <div class="content-container">
+                            <label for="content" class="label">Blog</label>
+                            <textarea type="text" name="content" class="content" ><%= data.blog %></textarea>
+                        </div>
+
+                        <div class="hashtag-container">
+                            <label for="hashtag" class="label">Hashtag</label>
+                            <textarea type="text" name="hashtag" class="hashtag" ><%= data.hashtags %></textarea>
+                        </div>
+
+                        <div class="btn-grid">
+
+
+                            <button class="submit-btn" id="saveChanges-btn" type="button">Save</button>
+                            <button class="discard-btn" id="delete-btn" type="button">Delete</button>
+                            <button class="discard-btn" id="discardChanges-btn" type="button">Discard</button>
+ 
+
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="module" src="/script.js"></script>
+
+</body>
+</html>

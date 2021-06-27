@@ -1,0 +1,204 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 6rem;
+  width: 100%;
+  background-color: #FFBD21;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 2.25rem;
+  box-shadow: 0 0 0.25rem 0 #262628;
+}
+
+.nav .logo {
+  display: block;
+  height: 2.5rem;
+  width: 7.1875rem;
+}
+
+.nav .logo svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.nav .menu-close {
+  transform: translateX(106%);
+}
+
+.nav .menu_bg_shadow-close {
+  display: none;
+}
+
+.nav .menu_bg_shadow {
+  z-index: 99;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #26262880;
+  transition: 0.5s;
+}
+
+.nav .menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+  width: 80%;
+  background-color: #FFBD21;
+  box-shadow: 0 0 0.25rem 0 #262628;
+  transition: 0.5s;
+}
+
+.nav .menu .menu-list {
+  margin-top: 8.25rem;
+  list-style: none;
+  height: 35.875rem;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-rows: max-content max-content max-content max-content;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn {
+  grid-row: 1/2;
+  margin-bottom: 1.875rem;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list {
+  list-style: none;
+  height: max-content;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: max-content;
+  padding: 0 1.125rem;
+  grid-column-gap: 0.5rem;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  height: max-content;
+  width: max-content;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-1 img.profile-img {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-2 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-2 .drp-dwn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-2 .drp-dwn h3 {
+  display: block;
+  font-size: 1.5rem;
+  word-break: break-all;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-2 .drp-dwn .logot-btn-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-2 .drp-dwn .logot-btn-container .logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 80%;
+  background-color: #262628;
+  color: #ffffff;
+  border-radius: 312.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav .menu .menu-list .menu-list-item-img-drp-dwn .img-drp-dwn-list li.img-drp-dwn-list-item-2 .drp-dwn .logot-btn-container .logout-btn:hover {
+  background-color: #ffffff;
+  color: #262628;
+}
+
+.nav .menu .menu-list .menu-list-item-links a.menu-list-item-links-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.125rem;
+  background-color: #262628;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.nav .menu .menu-list .menu-list-item-links a.menu-list-item-links-a:hover {
+  background-color: #ffffff;
+  color: #262628;
+}
+
+.nav .burger {
+  cursor: pointer;
+  justify-self: right;
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.3125rem 0.1875rem;
+  z-index: 110;
+}
+
+.nav .burger li {
+  display: block;
+  height: 0.4375rem;
+  width: 2.125rem;
+  border-radius: 125rem;
+  background-color: #262628;
+  transition: 0.5s;
+}
+
+.nav .burger li.mid {
+  margin: 0.28125rem 0;
+  transition: 0.5s;
+}
+
+.nav .burger-close .top {
+  width: 2.5rem;
+  transform: translateY(0.71875rem) rotate(45deg);
+}
+
+.nav .burger-close .mid {
+  opacity: 0;
+}
+
+.nav .burger-close .bot {
+  width: 2.5rem;
+  transform: translateY(-0.71875rem) rotate(-45deg);
+}
+/*# sourceMappingURL=nav-mobile.inc.css.map */

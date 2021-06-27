@@ -1,0 +1,137 @@
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/variables.inc.scss";
+
+
+
+
+
+
+.main-login {
+    padding: rem( 96 ) rem( 18 );
+    min-height: #{'calc(100vh - #{$nav-mobile-height})'};
+    margin-top: rem( 96 );
+
+
+
+
+
+
+
+
+    .login-signup-form {
+        display: block;
+        width: 100%;
+        background-color: $theme_gold;
+        // border-radius: 50p;
+
+        .tabs {
+            height: rem( 56 );
+            width: 100%;
+            display: grid;
+            background-color: $theme_primaryBlack;
+            grid-template-columns: repeat(4 , 1fr);
+            grid-template-rows: max-content;
+
+            
+            .login-tab {
+                cursor: pointer;
+                grid-column: 1/2;
+                grid-row: 1/2;
+                height: rem( 56 );
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;  
+                font-size: rem( 20 );
+                color: $white;
+                font-weight: 500;  
+            }
+            .signUp-tab {
+                cursor: pointer;
+                grid-column: 2/3;
+                @extend .login-tab;
+            } 
+
+            .active-tab {
+                background-color: $theme_gold;
+                color: $theme_primaryBlack;
+            }
+        }
+
+
+        .tab-content {
+            background-color: $theme_gold;
+            padding: rem( 18*2 );
+            grid-row-gap: rem( 36 );
+            
+            .userName, .password {
+                background-color: $white;
+                height: rem( 46 );
+                width: 100%;
+                border-radius: rem( 3 );
+                padding: 0 rem( 10 );
+                font-size: rem( 18 );
+            }
+            .submit-btn {
+                height: rem( 40 );
+                width: 70%;
+                background-color: $theme_primaryBlack;
+                color: $white;
+                text-align: center;
+                border-radius: rem( 5000 );
+            }
+
+            .forgot-passwrd-link {
+                color: $theme_primaryBlack;
+                font-size: rem( 18 );
+                text-decoration: none;   
+            }
+
+
+
+
+            @mixin form {
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                grid-row-gap: rem( 36 );
+            }
+
+            .form-log {
+                @include form;
+            }
+            .form-sup {
+                @include form;
+            }
+
+            .form-log-sup { 
+                display: none;
+            }
+
+        }
+
+
+
+
+    }
+}
+
+
+.footer-login {
+    background-color: $theme_primaryBlack;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    h2 {
+        display: block;
+        padding: rem(30);
+        font-weight: 400;
+        color: $white;
+    }
+
+
+}

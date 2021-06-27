@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartUp</title>
+
+    <!-- F O N T - A W E S O M E - L I N K -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body id="getstarted_page">
+    
+    <%- include('./views.inc/nav.inc.ejs', {options : false} ); %> 
+
+
+
+
+
+
+    <main class="main-getStarted">
+
+
+
+        <div class="main-getStarted-container">
+
+            <div class="main-getStarted-container-inner">
+
+                <form action="/signup" method="POST" enctype="multipart/form-data">
+
+                    <div class="profile-img-upload-container">
+                        <img src="profile_avatar.jpeg" alt="profile img" class="profile-img">
+                        <input type="file" accept="image/*" name="profile-img" class="profile-img-input" value="profile_avatar.jpeg">
+                    </div>
+
+                    <div class="username-container">
+                        <h2>User Name</h2>
+                        <input type="text" name="userName" class="userName">
+                    </div>
+
+                    <div class="bio-container">
+                        <h2>Bio</h2>
+                        <textarea type="text" name="bio" class="input-bio"></textarea>
+                    </div>
+
+                    <input type="hidden" value="<%= UidStr %>" name="UidStr">
+                    <input type="hidden" value="<%= email %>" name="emailID">
+                    <input type="hidden" value="<%= password %>" name="password">
+
+
+                    
+                    <button type="button" class="submit-btn">save</button>
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>

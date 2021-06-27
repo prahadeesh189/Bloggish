@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+
+
+    <!-- F O N T - A W E S O M E - L I N K -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body id="view_page">
+    <%- include('./views.inc/nav.inc.ejs', {options : true} ); %> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="main-viewpage">
+
+        <div class="view-container">
+
+            <div class="title-opt-container">
+                <div class="title-bg-container">
+                    <img src="<%= thumbnailPic %>" alt="" class="bg-img">
+                    <div class="title-cont">
+                        <h1><%= title %></h1>
+                    </div>
+                </div>
+
+                <div class="author-opt-outer-cont">
+                    <div class="author-opt-inner-cont">
+
+                        <a href="/viewaccount/<%= Author_uid %>" class="author-container">
+                            <img src="<%= authorProfilePic  %>" alt="" class="author-img">
+                            <h4 class="author-name"><%= authorUserName %></h4>
+                        </a>
+
+                        <% if (editOptionEnabled == true) {%> 
+                            <button class="edit-btn">
+                                <i class="fas fa-pen"></i>Edit
+                            </button>
+                        <% } %>
+                        
+                    
+
+
+                       
+                            <button class="like-btn 
+                            <% if (isBlogAlreadyLikedByThisUser == true) { %>
+                                liked-class
+                            <% } %>
+                            ">
+                                <i class="far fa-thumbs-up"></i>
+                            </button>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="view-content">
+                <p class="p-view-content"><%= blog %></p>
+            </div>
+
+
+
+            <div class="hashtag-display-container">
+
+                
+
+                <% hashTagObjArray.forEach(hashTagObj => { %>
+
+                    <a href="/hashtag/<%= hashTagObj.hashtagID %>"><h4><%= hashTagObj.hashtag %></h4></a>
+
+                <% }); %>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="module" src="/script.js"></script>
+
+</body>
+</html>

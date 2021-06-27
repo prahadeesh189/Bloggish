@@ -1,0 +1,502 @@
+aside.sidebar-explore {
+  position: fixed;
+  top: 6rem;
+  display: block;
+  width: 100%;
+  z-index: 10;
+}
+
+aside.sidebar-explore .activit-extDdwn {
+  z-index: 15;
+  background-color: #262628;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 2.25rem;
+  align-items: center;
+  height: 3.5rem;
+  width: 100%;
+}
+
+aside.sidebar-explore .activit-extDdwn .sidebar-board {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+aside.sidebar-explore .activit-extDdwn .extend-dwn {
+  justify-self: right;
+  border: 0.15625rem solid #ffffff;
+  padding: 0.125rem;
+  border-radius: 50%;
+  color: #ffffff;
+  display: block;
+  height: max-content;
+  width: max-content;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+aside.sidebar-explore .activit-extDdwn .extend-dwn svg {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+}
+
+aside.sidebar-explore .activit-extDdwn .extend-dwn-close {
+  transform: rotate(90deg);
+}
+
+aside.sidebar-explore .opts-btn-container {
+  background-color: #FFBD21;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  transition: 0.5s;
+  border-bottom: 0.125rem solid #262628;
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+}
+
+aside.sidebar-explore .opts-btn-container [class^=activity-opts] {
+  cursor: pointer;
+  font-size: 1.375rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #262628;
+  background-color: #FFBD21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 100%;
+  font-weight: 500;
+}
+
+aside.sidebar-explore .opts-btn-container [class^=activity-opts]:hover {
+  color: #ffffff;
+  background-color: #262628;
+}
+
+aside.sidebar-explore .opts-btn-container .active-opt {
+  background-color: #262628;
+  color: #ffffff;
+}
+
+aside.sidebar-explore .opts-btn-container .create-blog-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.375rem;
+  background-color: #262628;
+  color: #ffffff;
+  height: 2.875rem;
+  width: 80%;
+  border-radius: 312.5rem;
+  text-align: center;
+  margin: 1rem 0 1rem;
+}
+
+aside.sidebar-explore .opts-btn-container .create-blog-btn:hover {
+  background-color: #ffffff;
+  color: #262628;
+}
+
+aside.sidebar-explore .opts-btn-container-close {
+  transform: translateY(-105%);
+}
+
+.main-explore {
+  display: block;
+  min-height: calc(100vh - 6rem);
+  margin-top: 14.25rem;
+}
+
+.main-explore .opts-cont-div {
+  display: block;
+  width: 100%;
+  height: 0;
+  transition: 0.5s;
+}
+
+.main-explore .topic, .main-explore .author, .main-explore .trend-blogs {
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content max-content;
+  justify-items: center;
+  border-bottom: 0.125rem solid #262628;
+}
+
+.main-explore .topic .topic-cont, .main-explore .topic .author-cont, .main-explore .topic .trend-blogs-cont, .main-explore .author .topic-cont, .main-explore .author .author-cont, .main-explore .author .trend-blogs-cont, .main-explore .trend-blogs .topic-cont, .main-explore .trend-blogs .author-cont, .main-explore .trend-blogs .trend-blogs-cont {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 0.125rem solid #262628;
+  position: fixed;
+  z-index: 10;
+  margin-top: -4.75rem;
+  background-color: #FFBD21;
+  padding: 0 1.125rem;
+}
+
+.main-explore .topic .topic-cont .topic-cover, .main-explore .topic .topic-cont .author-cover, .main-explore .topic .topic-cont .trend-blogs-cover, .main-explore .topic .author-cont .topic-cover, .main-explore .topic .author-cont .author-cover, .main-explore .topic .author-cont .trend-blogs-cover, .main-explore .topic .trend-blogs-cont .topic-cover, .main-explore .topic .trend-blogs-cont .author-cover, .main-explore .topic .trend-blogs-cont .trend-blogs-cover, .main-explore .author .topic-cont .topic-cover, .main-explore .author .topic-cont .author-cover, .main-explore .author .topic-cont .trend-blogs-cover, .main-explore .author .author-cont .topic-cover, .main-explore .author .author-cont .author-cover, .main-explore .author .author-cont .trend-blogs-cover, .main-explore .author .trend-blogs-cont .topic-cover, .main-explore .author .trend-blogs-cont .author-cover, .main-explore .author .trend-blogs-cont .trend-blogs-cover, .main-explore .trend-blogs .topic-cont .topic-cover, .main-explore .trend-blogs .topic-cont .author-cover, .main-explore .trend-blogs .topic-cont .trend-blogs-cover, .main-explore .trend-blogs .author-cont .topic-cover, .main-explore .trend-blogs .author-cont .author-cover, .main-explore .trend-blogs .author-cont .trend-blogs-cover, .main-explore .trend-blogs .trend-blogs-cont .topic-cover, .main-explore .trend-blogs .trend-blogs-cont .author-cover, .main-explore .trend-blogs .trend-blogs-cont .trend-blogs-cover {
+  justify-self: left;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  height: 3.5rem;
+  width: max-content;
+}
+
+.main-explore .topic .topic-cont .topic-cover h1, .main-explore .topic .topic-cont .author-cover h1, .main-explore .topic .topic-cont .trend-blogs-cover h1, .main-explore .topic .author-cont .topic-cover h1, .main-explore .topic .author-cont .author-cover h1, .main-explore .topic .author-cont .trend-blogs-cover h1, .main-explore .topic .trend-blogs-cont .topic-cover h1, .main-explore .topic .trend-blogs-cont .author-cover h1, .main-explore .topic .trend-blogs-cont .trend-blogs-cover h1, .main-explore .author .topic-cont .topic-cover h1, .main-explore .author .topic-cont .author-cover h1, .main-explore .author .topic-cont .trend-blogs-cover h1, .main-explore .author .author-cont .topic-cover h1, .main-explore .author .author-cont .author-cover h1, .main-explore .author .author-cont .trend-blogs-cover h1, .main-explore .author .trend-blogs-cont .topic-cover h1, .main-explore .author .trend-blogs-cont .author-cover h1, .main-explore .author .trend-blogs-cont .trend-blogs-cover h1, .main-explore .trend-blogs .topic-cont .topic-cover h1, .main-explore .trend-blogs .topic-cont .author-cover h1, .main-explore .trend-blogs .topic-cont .trend-blogs-cover h1, .main-explore .trend-blogs .author-cont .topic-cover h1, .main-explore .trend-blogs .author-cont .author-cover h1, .main-explore .trend-blogs .author-cont .trend-blogs-cover h1, .main-explore .trend-blogs .trend-blogs-cont .topic-cover h1, .main-explore .trend-blogs .trend-blogs-cont .author-cover h1, .main-explore .trend-blogs .trend-blogs-cont .trend-blogs-cover h1 {
+  display: flex;
+  align-items: center;
+  height: max-content;
+  width: max-content;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0.3125rem 1rem;
+  background-color: #262628;
+  color: #ffffff;
+}
+
+.main-explore .topic .topic-cont a.search-btn, .main-explore .topic .author-cont a.search-btn, .main-explore .topic .trend-blogs-cont a.search-btn, .main-explore .author .topic-cont a.search-btn, .main-explore .author .author-cont a.search-btn, .main-explore .author .trend-blogs-cont a.search-btn, .main-explore .trend-blogs .topic-cont a.search-btn, .main-explore .trend-blogs .author-cont a.search-btn, .main-explore .trend-blogs .trend-blogs-cont a.search-btn {
+  justify-self: right;
+  text-decoration: none;
+  display: block;
+  height: max-content;
+  width: max-content;
+  padding: 0.5rem 1.5625rem;
+  border-radius: 312.5rem;
+  background-color: #262628;
+  color: #ffffff;
+}
+
+.main-explore .topic .topic-cont a.search-btn svg, .main-explore .topic .author-cont a.search-btn svg, .main-explore .topic .trend-blogs-cont a.search-btn svg, .main-explore .author .topic-cont a.search-btn svg, .main-explore .author .author-cont a.search-btn svg, .main-explore .author .trend-blogs-cont a.search-btn svg, .main-explore .trend-blogs .topic-cont a.search-btn svg, .main-explore .trend-blogs .author-cont a.search-btn svg, .main-explore .trend-blogs .trend-blogs-cont a.search-btn svg {
+  display: block;
+  height: 1.125rem;
+  width: 1.125rem;
+}
+
+.main-explore .topic .topic-div, .main-explore .author .topic-div, .main-explore .trend-blogs .topic-div {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 1.125rem;
+  padding: 1rem 0 6.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15.625rem);
+  grid-auto-rows: 4.625rem;
+  grid-gap: 0.5rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.main-explore .topic .topic-div .topic-cover, .main-explore .author .topic-div .topic-cover, .main-explore .trend-blogs .topic-div .topic-cover {
+  all: unset;
+  cursor: pointer;
+  color: #262628;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  width: 13.125rem;
+  background-color: #ffffff;
+  padding: 0.625rem;
+  overflow: hidden;
+  border: 0.125rem solid #262628;
+  border-radius: 312.5rem;
+}
+
+.main-explore .topic .topic-div .topic-cover h2, .main-explore .author .topic-div .topic-cover h2, .main-explore .trend-blogs .topic-div .topic-cover h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 450;
+  position: relative;
+}
+
+.main-explore .topic .topic-div .topic-cover h2::after, .main-explore .author .topic-div .topic-cover h2::after, .main-explore .trend-blogs .topic-div .topic-cover h2::after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 0;
+  position: absolute;
+  bottom: -0.3125rem;
+  background-color: #262628;
+  transition: 0.2s;
+}
+
+.main-explore .topic .topic-div .topic-cover:hover h2, .main-explore .author .topic-div .topic-cover:hover h2, .main-explore .trend-blogs .topic-div .topic-cover:hover h2 {
+  margin: 0 0 0.3125rem;
+}
+
+.main-explore .topic .topic-div .topic-cover:hover h2::after, .main-explore .author .topic-div .topic-cover:hover h2::after, .main-explore .trend-blogs .topic-div .topic-cover:hover h2::after {
+  width: 100%;
+}
+
+.main-explore .topic .author-div, .main-explore .author .author-div, .main-explore .trend-blogs .author-div {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20.8125rem);
+  grid-template-rows: repeat(auto-fit, 6.75rem);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin: 1.875rem 2.5rem 6.25rem;
+  height: max-content;
+  max-width: 100%;
+  width: 100%;
+}
+
+.main-explore .topic .author-div .author-card-cont, .main-explore .author .author-div .author-card-cont, .main-explore .trend-blogs .author-div .author-card-cont {
+  all: unset;
+  color: #28242A;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-column-gap: 0.9375rem;
+  align-items: center;
+  justify-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 35rem;
+  padding: 0.9375rem;
+  background-color: #FFBD21;
+  border-radius: 0.625rem;
+  border: 0.125rem solid #262628;
+  cursor: pointer;
+}
+
+.main-explore .topic .author-div .author-card-cont .profile-img, .main-explore .author .author-div .author-card-cont .profile-img, .main-explore .trend-blogs .author-div .author-card-cont .profile-img {
+  display: block;
+  height: 4.375rem;
+  width: 4.375rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 0.25rem solid #ffffff;
+}
+
+.main-explore .topic .author-div .author-card-cont .user-name, .main-explore .author .author-div .author-card-cont .user-name, .main-explore .trend-blogs .author-div .author-card-cont .user-name {
+  justify-self: flex-start;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 1.5rem;
+  width: max-content;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-explore .topic .author-div .author-card-cont .user-name::after, .main-explore .author .author-div .author-card-cont .user-name::after, .main-explore .trend-blogs .author-div .author-card-cont .user-name::after {
+  content: '';
+  display: block;
+  height: 0.125rem;
+  width: 0;
+  background-color: #262628;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+}
+
+.main-explore .topic .author-div .author-card-cont:hover, .main-explore .author .author-div .author-card-cont:hover, .main-explore .trend-blogs .author-div .author-card-cont:hover {
+  box-shadow: 0 0 0.25rem 0 #262628;
+}
+
+.main-explore .topic .author-div .author-card-cont:hover .user-name::after, .main-explore .author .author-div .author-card-cont:hover .user-name::after, .main-explore .trend-blogs .author-div .author-card-cont:hover .user-name::after {
+  width: 100%;
+}
+
+.main-explore .topic .blog-gallery, .main-explore .author .blog-gallery, .main-explore .trend-blogs .blog-gallery {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-row-gap: 3.5rem;
+  padding: 1.875rem 0 6.25rem;
+}
+
+.main-explore .topic .blog-gallery .blog, .main-explore .author .blog-gallery .blog, .main-explore .trend-blogs .blog-gallery .blog {
+  all: unset;
+  color: #262628;
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: max-content max-content;
+  justify-items: center;
+  background-color: #ffffff;
+  height: 26.875rem;
+  width: 18.75rem;
+  box-sizing: content-box;
+  border-top: 0.25rem solid #262628;
+  border-left: 0.25rem solid #262628;
+  border-right: 0.25rem solid #262628;
+  border-bottom: 0.25rem solid #262628;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container {
+  position: relative;
+  height: max-content;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container {
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 13.125rem;
+  width: 18.75rem;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container .thumbnail-img, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container .thumbnail-img, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .thumbnail-container .thumbnail-img {
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  height: 18.75rem;
+  width: 16.875rem;
+  transition: 0.2s;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  height: 2.8125rem;
+  width: 18.75rem;
+  background-color: #00000077;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp, .main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  justify-items: center;
+  color: #ffffff;
+  border-radius: 0.3125rem;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp svg, .main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp svg, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp svg, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp svg, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp svg, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp svg {
+  display: block;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  margin: 0 0.1875rem;
+}
+
+.main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp span, .main-explore .topic .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp span, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp span, .main-explore .author .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp span, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .view-grp span, .main-explore .trend-blogs .blog-gallery .blog .thumbnail-da-livi-container .date-livi-container .view-like-grp .like-grp span {
+  display: block;
+  max-width: 5.625rem;
+  font-size: 1.125rem;
+  overflow: hidden;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container, .main-explore .author .blog-gallery .blog .blog-data-container, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container {
+  grid-row: 2/3;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  height: 13.75rem;
+  width: 18.75rem;
+  padding: 0.3125rem 0.9375rem 0.9375rem;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .data-div-1 h3.title, .main-explore .author .blog-gallery .blog .blog-data-container .data-div-1 h3.title, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .data-div-1 h3.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .data-div-1 div.line-sep, .main-explore .author .blog-gallery .blog .blog-data-container .data-div-1 div.line-sep, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .data-div-1 div.line-sep {
+  display: block;
+  height: 0.125rem;
+  width: 16.875rem;
+  background-color: #262628;
+  border-radius: 312.5rem;
+  margin: 0.3125rem 0;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .data-div-1 .desc-container, .main-explore .author .blog-gallery .blog .blog-data-container .data-div-1 .desc-container, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .data-div-1 .desc-container {
+  overflow: hidden;
+  height: 7.1875rem;
+  width: 16.875rem;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .data-div-1 .desc-container p.desc, .main-explore .author .blog-gallery .blog .blog-data-container .data-div-1 .desc-container p.desc, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .data-div-1 .desc-container p.desc {
+  height: 8.4375rem;
+  width: 16.875rem;
+  position: relative;
+  font-size: 1.0625rem;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .author-container, .main-explore .author .blog-gallery .blog .blog-data-container .author-container, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .author-container {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top: 0.4375rem;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 2.1875rem;
+  width: max-content;
+  position: relative;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .author-container .author-img, .main-explore .author .blog-gallery .blog .blog-data-container .author-container .author-img, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .author-container .author-img {
+  display: block;
+  height: 2.1875rem;
+  width: 2.1875rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.main-explore .topic .blog-gallery .blog .blog-data-container .author-container .author-name, .main-explore .author .blog-gallery .blog .blog-data-container .author-container .author-name, .main-explore .trend-blogs .blog-gallery .blog .blog-data-container .author-container .author-name {
+  height: 2.1875rem;
+  max-width: max-content;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5625rem 0 0.625rem;
+  border-radius: 312.5rem;
+  font-weight: 500;
+  transition: 0.2s;
+  font-size: 1rem;
+  border: 0.125rem solid #262628;
+}
+
+.main-explore .topic .blog-gallery .blog:hover, .main-explore .author .blog-gallery .blog:hover, .main-explore .trend-blogs .blog-gallery .blog:hover {
+  box-shadow: 0 0 0.25rem 0.0625rem #777777;
+}
+
+.main-explore .topic .blog-gallery .blog:hover .thumbnail-container .thumbnail-img, .main-explore .author .blog-gallery .blog:hover .thumbnail-container .thumbnail-img, .main-explore .trend-blogs .blog-gallery .blog:hover .thumbnail-container .thumbnail-img {
+  height: 17.5rem;
+  width: 18.75rem;
+}
+
+.main-explore .topic .blog-gallery .blog:hover .blog-data-container .author-container .author-name, .main-explore .author .blog-gallery .blog:hover .blog-data-container .author-container .author-name, .main-explore .trend-blogs .blog-gallery .blog:hover .blog-data-container .author-container .author-name {
+  background-color: #FFBD21;
+}
+/*# sourceMappingURL=explore-mobile.inc.css.map */

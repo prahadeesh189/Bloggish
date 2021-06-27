@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAKA,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,CAAC;EACV,WAAW,ECND,UAAU,EAAE,MAAM,EAAE,MAAM,EAAE,OAAO,EAAE,UAAU;CDO5D;;AAED,AAAA,KAAK,EAAE,MAAM,CAAC;EACV,GAAG,EAAE,KAAK;EACV,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "../global.inc.scss",
+        "../typography.inc.scss"
+    ],
+    "names": [],
+    "file": "global.inc.css"
+}

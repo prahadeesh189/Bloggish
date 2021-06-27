@@ -1,0 +1,406 @@
+@import "../style.inc/variables.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/blog-card.inc.scss";
+@import "../style.inc/typography.inc.scss";
+@import "../style.inc/authorCard.inc.scss";
+
+
+
+.main-search {
+    $main-srhpge-vw: 80;   
+    
+    margin-top: $nav-height;
+    min-height: #{'calc(100vh - #{$nav-height})'};
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+
+
+    .search-page-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        min-height: #{'calc(100vh - #{$nav-height})'};
+        height: 100%;
+        width: 80%;  
+        background-color: $white;          
+
+        border-left : p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid $theme_primaryBlack;
+        border-right: p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+        padding-top: p-x( 76 , $main-srhpge-vw , 100 , 760 );
+
+
+        .search-result {
+            display: block;
+            height: 100%;
+            width:  100%;
+
+
+
+
+            .tab-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                border-bottom: 2px solid $theme_primaryBlack;
+
+
+
+                .result-blogs-btn , .result-author-btn {
+                    text-align: center;
+                    // border: 2px solid $theme_primaryBlack;
+                    font-size: 24px;
+                    padding: 8px;
+                }
+
+                .result-topics-btn {
+                    text-align: center;
+                    border-right: 2px solid $theme_primaryBlack;
+                    border-left: 2px solid $theme_primaryBlack;
+                    font-size: 24px;
+                    padding: 10px;
+                }
+
+
+                .active-tab {
+
+                    span {
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            width: 100%;
+                            background-color: $theme_primaryBlack;
+                            position: absolute;
+                            bottom: -4px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+
+
+
+
+            .tab-content {
+
+
+
+
+
+
+
+
+
+
+
+                .result-topics-gallery {
+                    display: none;
+                    grid-template-columns: repeat(auto-fit,  p-x( 224 , $main-srhpge-vw , 100 , 760 ) );
+                    grid-auto-rows:  p-x( 61+16 , $main-srhpge-vw , 100 , 760 );
+                    grid-gap: p-x( 16 , $main-srhpge-vw , 100 , 760 );
+                    align-items: center;
+                    justify-items: center;
+                    justify-content: center;
+                    box-sizing: border-box;
+                    margin: p-x( 40 , $main-srhpge-vw , 100 , 760 )   0     p-x( 100 , $main-srhpge-vw , 100 , 760 );
+                
+                    padding: 0   p-x( 30 , $main-srhpge-vw , 100 , 760 );
+    
+                    height: max-content;
+                    // max-width: 85%;
+                    width: 100%;
+                    // overflow-y: hidden;
+        
+        
+                    .topic-cover {
+                        all: unset;
+                        
+                        cursor: pointer;
+                        color: $theme_primaryBlack;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+        
+                        height: max-content;
+                        width: p-x( 200 , $main-srhpge-vw , 100 , 760 );
+                        background-color: $white;
+                        padding: p-x( 10 , $main-srhpge-vw , 100 , 760 );
+                        overflow: hidden;
+        
+                        border: p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid $theme_primaryBlack;
+                        border-radius: p-x( 5000 , $main-srhpge-vw , 100 , 760 );
+        
+                        h2 {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: max-content;
+                            height: 100%;
+                            // max-width: 95%;
+                            font-size: p-x( 24 , $main-srhpge-vw , 100 , 760 );
+                            font-weight: 450;
+                            position: relative;
+        
+                            &::after {
+                                content: '';
+                                display: block;
+                                height: p-x( 2 , $main-srhpge-vw , 100 , 760 );
+                                width: 0;
+                                position: absolute;
+                                bottom: p-x( -5 , $main-srhpge-vw , 100 , 760 );
+                                background-color: $theme_primaryBlack;
+                                transition: 0.2s;
+                            }
+                        }
+        
+        
+                        &:hover {                    
+                            h2 {
+                                margin: 0 0 p-x( 5 , $main-srhpge-vw , 100 , 760 );
+                                &::after {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+    
+
+                .result-author-gallery {
+                    display: none;
+                    grid-template-columns:  repeat(auto-fit, p-x( 329+8 , $main-srhpge-vw , 100 , 760 ) );
+                    grid-auto-rows: max-content;
+                    grid-column-gap:  p-x( 30 , $main-srhpge-vw , 100 , 760 );
+                    grid-row-gap:     p-x( 30 , $main-srhpge-vw , 100 , 760 );
+                    align-items: center;
+                    justify-items: center;
+                    justify-content: center;
+                    margin: p-x( 40 , $main-srhpge-vw , 100 , 760 ) 0 p-x( 100 , $main-srhpge-vw , 100 , 760 );
+                
+                    padding: 0 p-x( 30 , $main-srhpge-vw , 100 , 760 );
+    
+                    height: max-content;
+                    width: 100%;
+        
+                    .author-card-cont {
+                        @include author-card-cont( $main-srhpge-vw );
+                    }
+                }
+    
+    
+                .result-blog-gallery {
+                    width: 100%;
+                    display: none;
+                    grid-template-columns:  repeat( auto-fit , p-x( 308 , $main-srhpge-vw , 100 , 760 ) );
+                    grid-auto-rows: p-x( 438 , $main-srhpge-vw , 100 , 760 );
+        
+        
+                    align-items: center;
+                    justify-items: center;
+                    justify-content: center;
+                    grid-column-gap: p-x( 40 , $main-srhpge-vw , 100 , 760 );
+                    grid-row-gap:    p-x( 40 , $main-srhpge-vw , 100 , 760 );
+        
+                    margin: p-x( 40 , $main-srhpge-vw , 100 , 760 ) 0 p-x( 100 , $main-srhpge-vw , 100 , 760 );    
+                    padding: 0 p-x( 30 , $main-srhpge-vw , 100 , 760 );
+    
+    
+                    .blog {
+                        @include blog-card($main-srhpge-vw);
+                    }
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        section.search-section {
+            position: fixed;
+            top: $nav-height;
+            background-color: $white;
+            z-index: 15;
+        
+            display: grid;
+            place-items: center;
+            border-bottom: p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid $theme_primaryBlack;
+            border-left: p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid $theme_primaryBlack;
+            border-right: p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid $theme_primaryBlack;
+        
+            width: 80%;
+            padding: p-x( 15 , $main-srhpge-vw , 100 , 760 ) 0 p-x( 15 , $main-srhpge-vw , 100 , 760 );
+        
+        
+            .searcbar-sugg-container {
+        
+                box-shadow: 0 0 p-x( 4 , $main-srhpge-vw , 100 , 760 ) 0 $gray;
+                display: grid;
+                grid-template-rows: max-content 1fr;
+                overflow: hidden;
+        
+                width: 100%;
+                max-width: 70vw;
+
+                border-radius: p-x( 22 , $main-srhpge-vw , 100 , 760 );
+        
+        
+                .searchbar-container {
+                    display: flex;
+                    justify-content: center;
+        
+                    .search-input {
+                        border-top:     p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-bottom:  p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-left:    p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        background-color: $white;
+        
+                        padding: 0 0 0 p-x( 15 , $main-srhpge-vw , 100 , 760 );
+                        font-size: p-x( 18 , $main-srhpge-vw , 100 , 760 );
+        
+                        height: p-x( 40 , $main-srhpge-vw , 100 , 760 );
+                        width: 93%;
+                        border-radius: p-x( 5000 , $main-srhpge-vw , 100 , 760 ) 0 0 p-x( 5000 , $main-srhpge-vw , 100 , 760 );
+                    }
+                    .search-btn {
+                        border-top:     p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-bottom:  p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-right:   p-x( 2 , $main-srhpge-vw , 100 , 760 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        background-color: $white;
+        
+                        height: p-x( 40 , $main-srhpge-vw , 100 , 760 );
+                        width: 7%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 0 p-x( 5000 , $main-srhpge-vw , 100 , 760 ) p-x( 5000 , $main-srhpge-vw , 100 , 760 ) 0;
+                    
+                        svg {
+                            height: p-x( 20 , $main-srhpge-vw , 100 , 760 );
+                            width:  p-x( 20 , $main-srhpge-vw , 100 , 760 );
+                            margin-right: p-x( 5 , $main-srhpge-vw , 100 , 760 );
+                        }
+                    }
+                }
+        
+        
+        
+                .suggestions {
+                    justify-self: center;
+        
+                    width: 100%;
+                    max-width: 70vw;
+                    transition: 0.4s;
+                    background-color: $white;
+        
+                    overflow: hidden;
+                    display: none;
+                    justify-content: center;
+                    
+        
+                    .sugg-list {
+                        list-style: none;
+                        max-height: p-x( 360 , $main-srhpge-vw , 100 , 760 );
+                        width: 95%;
+                        margin: p-x( 10 , $main-srhpge-vw , 100 , 760 ) 0 p-x( 20 , $main-srhpge-vw , 100 , 760 );
+                        overflow-y: scroll;
+
+
+                        display: none;
+        
+                        .sugg-list-items {
+                            cursor: pointer;
+                            width: 100%;
+                            font-size: p-x( 18 , $main-srhpge-vw , 100 , 760 );
+                            padding: p-x( 8 , $main-srhpge-vw , 100 , 760 );
+        
+                            white-space: nowrap;
+        
+                            display: block;
+                            overflow: scroll;
+                            
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
+        
+                            &:hover {
+                                background-color: darken($color: $white, $amount: 5);
+                            }
+                        }
+
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                    }
+        
+        
+        
+                }   
+            }
+        
+            
+        }
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,337 @@
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/typography.inc.scss";
+@import "../style.inc/variables.inc.scss";
+@import "../page-mobile/authorCard-mobile.inc.scss";
+@import "../page-mobile/blog-card-mobile.inc.scss";
+
+
+
+
+
+
+
+.main-search {
+    display: block;
+    min-height: #{'calc(100vh - #{$nav-mobile-height})'};
+    margin-top: $nav-mobile-height;
+    padding: 0 rem( 18 );
+
+
+    .search-page-container {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        padding-top: rem( 76 );
+
+
+
+        .search-result {
+            display: block;
+            height: 100%;
+            width:  100%;
+
+
+            .result-topics-gallery {
+                box-sizing: border-box;
+                // height: rem( 300 );
+                width: 100%;
+                // display: flex;
+                // flex-direction: column;
+                // flex-wrap: wrap;
+                
+                padding: rem(30) 0 rem(100);
+    
+    
+    
+                display: grid;
+                grid-template-columns: repeat(auto-fit,  rem(234+16) );
+                grid-auto-rows: rem(58+16);
+                grid-gap: rem( 8 );
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+    
+    
+    
+                .topic-cover {
+                    all: unset;
+                    
+                    cursor: pointer;
+                    color: $theme_primaryBlack;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    height: max-content;
+                    width: rem( 210 );
+                    background-color: $white;
+                    padding: rem( 10 );
+                    overflow: hidden;
+    
+                    border: rem( 2 ) solid $theme_primaryBlack;
+                    border-radius: rem( 5000 );
+    
+                    h2 {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: max-content;
+                        height: 100%;
+                        // max-width: 95%;
+                        font-size: rem( 24 );
+                        font-weight: 450;
+                        position: relative;
+    
+                        &::after {
+                            content: '';
+                            display: block;
+                            height: rem( 2 );
+                            width: 0;
+                            position: absolute;
+                            bottom: rem( -5 );
+                            background-color: $theme_primaryBlack;
+                            transition: 0.2s;
+                        }
+                    }
+    
+    
+                    &:hover {                    
+                        h2 {
+                            margin: 0 0 rem( 5 );
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .result-author-gallery {
+                display: grid;
+                grid-template-columns:  repeat(auto-fit, rem(325+8) );
+                grid-template-rows:     repeat(auto-fit, rem(100+8) );
+                grid-column-gap:  rem( 16 );
+                grid-row-gap:     rem( 16 );
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                // margin: rem(30) rem( 40 ) rem( 100 );
+                padding: rem(30) 0 rem( 100 );
+            
+                height: max-content;
+                max-width: 100%;
+                width: 100%;
+    
+                .author-card-cont {
+                    @include author-card-cont;
+                }
+    
+            }
+
+            .result-blog-gallery {
+                display: grid;
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                grid-row-gap: rem( 56 );
+                padding: rem(30) 0 rem( 100 );
+                
+        
+    
+                .blog {
+                    @include blog-card-mobile;
+                }   
+            }
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+        .search-section {
+            display: grid;
+            place-items: center;
+        
+            position: fixed;
+            top: rem( 96 );
+            left: 0;
+            z-index: 15;
+        
+            background-color: $white;
+            border-bottom: rem(2) solid $theme_primaryBlack;
+        
+            width: 100%;
+            padding: rem( 15 ) 0 rem( 15 );
+
+        
+            .searcbar-sugg-container {
+        
+                box-shadow: 0 0 rem( 4 ) 0 $gray;
+                display: grid;
+                grid-template-rows: max-content 1fr;
+        
+                // min-height: rem( 300 );
+                width: 83vw;
+                // background-color: $theme_gold;
+                // border: rem( 2 ) solid $theme_primaryBlack;
+                border-radius: rem( 22 );
+                // overflow: hidden;
+        
+        
+                .searchbar-container {
+                    display: flex;
+                    justify-content: center;
+        
+                    .search-input {
+                        border-top:     rem( 2 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-bottom:  rem( 2 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-left:    rem( 2 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        background-color: $white;
+        
+                        padding: 0 0 0 rem( 15 );
+                        font-size: rem( 18 );
+        
+                        height: rem( 40 );
+                        width: 85%;
+        
+                        border-radius: rem( 5000 ) 0 0 rem( 5000 );
+                    }
+                    .search-btn {
+                        border-top:     rem( 2 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-bottom:  rem( 2 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        border-right:   rem( 2 ) solid lighten($theme_primaryBlack , $amount: 45 );
+                        background-color: $white;
+        
+                        height: rem( 40 );
+                        width:  15%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 0 rem( 5000 ) rem( 5000 ) 0;
+                    
+                        svg {
+                            height: rem( 20 );
+                            width:  rem( 20 );
+                            margin-right: rem( 5 );
+                        }
+                    }
+                }
+        
+        
+        
+        
+                .suggestions {
+                    justify-self: center;
+                    width: 83vw;
+                    transition: 0.4s;
+        
+                    display: flex;
+                    justify-content: center;
+        
+        
+                    .sugg-list {
+                        list-style: none;
+                        width: 92%;
+                        margin: rem( 10 ) rem( 10 ) rem( 16 ) ;
+                        // overflow: hidden;
+                        
+                        .sugg-list-items {
+                            cursor: pointer;
+                            font-size: rem( 16 );
+                            width: 100%;
+                            padding: rem( 8 ) 0;
+                            
+                            white-space: nowrap;
+        
+                            display: block;
+                            overflow: scroll;
+                            
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
+        
+                            &:hover {
+                                background-color: darken($color: $white, $amount: 5);
+                            }
+                        }
+                    }
+        
+        
+                    // height: rem( 300 );
+        
+                    // margin: rem( 15 ) 0 rem( 25 );
+                    // background-color: lightcoral;
+                }   
+            }
+        
+        
+        }
+        
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

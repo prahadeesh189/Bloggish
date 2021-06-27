@@ -1,0 +1,859 @@
+@import "../style.inc/variables.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/blog-card.inc.scss";
+@import "../style.inc/typography.inc.scss";
+@import "../style.inc/authorCard.inc.scss";
+
+
+
+
+.main-account {
+    $main-account-vw: 70;
+
+    min-height: #{'calc(100vh - #{$nav-height})'} ;
+    margin-top: $nav-height;
+    // background-color: darken($white, $amount: 10 );
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+
+
+    display: grid;
+    grid-template-columns: 100% 100%;
+    justify-items: center;
+    overflow-x: hidden;
+
+
+
+
+    
+    .container {
+        min-height: #{'calc(100vh - #{$nav-height})'} ;
+        height: 100%;
+        width: 80%;
+
+        transition: 0.5s;
+
+        min-width: max-content;
+
+        background-color: $white;
+
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-evenly;
+        align-items: center;
+
+        padding-top:    p-x( 40 , $main-account-vw , 100 , 760 );
+        padding-bottom:  p-x( 50 , $main-account-vw , 100 , 760 );
+
+
+        border-right: p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+        border-left:  p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+
+
+        .edit-form {
+
+
+            .profile-imgUp-bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: none;
+
+                height: 100%;
+                width:  100%;
+
+                background:#e9e9e9d7;
+            
+                filter:blur( p-x( 50 , $main-account-vw , 100 , 760 ) );
+                z-index: 15;
+            }
+
+
+
+            .profImgUp-cover {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width:  100%;
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 20;
+
+
+
+                .profile-img-upload-container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: max-content max-content max-content;
+                    place-items: center;
+                    position: relative;
+    
+                    border-radius: p-x( 20 , $main-account-vw , 100 , 760 );
+    
+                    background-color: $white;
+                    border: p-x( 5 , $main-account-vw , 100 , 760 ) solid $theme_gold;
+    
+
+                    .btn-grp {
+                        display: grid;
+                        height: max-content;
+                        width:  max-content;
+                        grid-template-columns: max-content max-content;
+                        grid-column-gap: p-x( 150 , $main-account-vw , 100 , 760 );
+                        margin-bottom: p-x( 40 , $main-account-vw , 100 , 760 )   ;
+
+
+                        .save-div, .close-div {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $theme_gold;
+                            color: $theme_primaryBlack;
+                            border-radius: p-x( 5 , $main-account-vw , 100 , 760 );
+
+
+                            height: p-x( 42 , $main-account-vw , 100 , 760 );
+                            width:  p-x( 100 , $main-account-vw , 100 , 760 );
+                            cursor: pointer;
+
+                            svg {
+                                display: block;
+                                height: p-x( 32 , $main-account-vw , 100 , 760 );
+                                width:  p-x( 32 , $main-account-vw , 100 , 760 );
+                            }
+
+                            &:hover {
+                                background-color: $theme_primaryBlack;
+                                color: $white;
+                            }
+                        }    
+                    }
+                    
+
+
+                    img.profile-img-preview {
+                        display: block;
+                        height: p-x( 325 , $main-account-vw , 100 , 760 );
+                        width:  p-x( 325 , $main-account-vw , 100 , 760 );
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 50%;
+    
+                        margin: p-x( 60 , $main-account-vw , 100 , 760 )  p-x( 150 , $main-account-vw , 100 , 760 )   ;
+                    }
+    
+                    .profile-img-upload {
+                        align-self: flex-start;
+    
+                        margin-bottom: p-x( 40 , $main-account-vw , 100 , 760 )   ;
+    
+                        display: block;
+    
+                        border-bottom: p-x( 1 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+                        width: max-content;
+                        font-size: p-x( 20 , $main-account-vw , 100 , 760 );
+                        padding: 0 p-x( 6 , $main-account-vw , 100 , 760 ) p-x( 5 , $main-account-vw , 100 , 760 );
+    
+                        &::-webkit-file-upload-button {
+                            margin-right: p-x( 10 , $main-account-vw , 100 , 760 );
+                            cursor: pointer;
+                            background-color: $theme_gold;
+                            font-family: $font_family;
+                            outline: none;
+                            border: none;
+                            border-radius: p-x( 5000 , $main-account-vw , 100 , 760 );
+                            height: p-x( 30 , $main-account-vw , 100 , 760 );
+                            width: max-content;
+                            padding: 0    p-x( 15 , $main-account-vw , 100 , 760 );
+    
+                            &:hover {
+                                background-color: $theme_primaryBlack;
+                                color: $white;
+                            }
+                        }
+    
+                    }
+                }
+            
+            }
+
+        
+        
+
+
+
+            .elements-container {
+                // width:    p-x( 744 , $main-account-vw , 100 , 760 ); 
+                width: 100%;   
+                display: grid;
+                grid-template-columns: max-content 1fr;
+               
+    
+                .image-container {
+                    height: max-content;
+                    width: max-content;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+    
+                    position: relative;
+                    
+                    .profile-img-label {
+                        font-size:  p-x( 30 , $main-account-vw , 100 , 760 );
+                        margin-bottom:  p-x( 17 , $main-account-vw , 100 , 760 );
+                    }
+                    .profile-img {
+                        cursor: pointer;
+
+
+                        height:  p-x( 156 , $main-account-vw , 100 , 760 );
+                        width:   p-x( 156 , $main-account-vw , 100 , 760 );
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 50%;
+                    }
+    
+                }
+    
+                .info-container-outer {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    margin-top: p-x( 45 , $main-account-vw , 100 , 760 );
+    
+                    .info-container-inner {
+                        height: max-content;
+                        width: max-content;
+    
+                        .userName-container, .email-container, .bio-container, .image-container {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            margin-top:  p-x( 34 , $main-account-vw , 100 , 760 );
+    
+                            .label {
+                                font-size:  p-x( 22 , $main-account-vw , 100 , 760 );
+                            }    
+                            
+                            .input-userName, .input-email, .input-bio {
+                                cursor: pointer;
+                                font-size:  p-x( 18 , $main-account-vw , 100 , 760 );
+                                border-radius:  p-x( 3 , $main-account-vw , 100 , 760 );
+                                padding: 0  p-x( 10 , $main-account-vw , 100 , 760 );
+                                height:  p-x( 44 , $main-account-vw , 100 , 760 );
+                                width:  p-x( 464-22 , $main-account-vw , 100 , 760 );
+                                background-color: $white;
+                                border:  p-x( 1 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+                            }
+                        
+                            .input-bio {
+                                min-height:  p-x( 175 , $main-account-vw , 100 , 760 );
+                                width:  p-x( 540 , $main-account-vw , 100 , 760 );
+                                resize: none;
+                                padding:  p-x( 10 , $main-account-vw , 100 , 760 )  p-x( 10 , $main-account-vw , 100 , 760 );
+                                outline: none;
+
+                                &::-webkit-scrollbar {
+                                    display: none;
+                                }
+                            }
+
+                            // .span-input {
+                            //     display: none;
+                            // }
+
+
+                            .span-userName, .span-email {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-template-rows: 1fr;
+                                align-items: center;
+
+                                word-wrap: break-word;
+                                outline: none;
+
+                                font-size:  p-x( 18 , $main-account-vw , 100 , 760 );
+                                border-radius:  p-x( 3 , $main-account-vw , 100 , 760 );
+                                padding:  0   p-x( 10 , $main-account-vw , 100 , 760 );
+                                min-height:  p-x( 46 , $main-account-vw , 100 , 760 );
+                                width:  p-x( 464 , $main-account-vw , 100 , 760 );
+                                background-color: $white;
+                                border:  p-x( 1 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+                                overflow-x: scroll;
+                                &::-webkit-scrollbar {
+                                    display: none;
+                                }
+                            }
+
+                            .span-bio {
+                                word-wrap: break-word;
+                                outline: none;
+                                display: block;
+                                font-size:  p-x( 18 , $main-account-vw , 100 , 760 );
+                                border-radius:  p-x( 5 , $main-account-vw , 100 , 760 );
+                                min-height:  p-x( 175 , $main-account-vw , 100 , 760 );
+                                width:  p-x( 540 , $main-account-vw , 100 , 760 );
+                                padding:  p-x( 8 , $main-account-vw , 100 , 760 )    p-x( 10 , $main-account-vw , 100 , 760 );
+                                background-color: $white;
+                                border:  p-x( 1 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+                                &::-webkit-scrollbar {
+                                    display: none;
+                                }
+                            }
+
+    
+                        }
+                    }
+    
+                }
+                
+            }
+    
+            .btn-container {
+                margin-top:  p-x( 36 , $main-account-vw , 100 , 760 );
+                height: max-content;
+                width:  p-x( 744 , $main-account-vw , 100 , 760 );
+                // width: 100%;
+    
+                .edit-btn, .save-btn, .cancel-btn  {
+                    cursor: pointer;
+                    text-align: center;
+    
+                    height:   p-x( 35 , $main-account-vw , 100 , 760 );
+                    width:   p-x( 125 , $main-account-vw , 100 , 760 );
+                    font-size:  p-x( 20 , $main-account-vw , 100 , 760 );
+                    border-radius:   p-x( 5000 , $main-account-vw , 100 , 760 );
+                    // background-color: darken($white, $amount: 15 );
+                    background-color: $theme_gold;
+                    color: $theme_primaryBlack;
+    
+                    margin-right:   p-x( 25 , $main-account-vw , 100 , 760 );
+    
+                    svg {
+                        height:  p-x( 18 , $main-account-vw , 100 , 760 );
+                        width:   p-x( 18 , $main-account-vw , 100 , 760 );
+                        margin-right:   p-x( 5 , $main-account-vw , 100 , 760 );
+                    }
+    
+                    &:hover {
+                        background-color: $theme_primaryBlack;
+                        color: $white;
+                    }
+                }
+
+                
+
+
+
+
+
+    
+            }
+        
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .insight-container {
+            display: grid;
+            grid-template-rows: max-content max-content max-content;
+            grid-row-gap: p-x( 40 , $main-account-vw , 100 , 760 );
+            width:  p-x( 744 , $main-account-vw , 100 , 760 );
+            margin: p-x( 80 , $main-account-vw , 100 , 760 ) 0 p-x( 80 , $main-account-vw , 100 , 760 );
+            
+            border-top: p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack ;
+            border-bottom: p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack ;
+            padding: p-x( 30 , $main-account-vw , 100 , 760 ) 0;
+
+
+            h1 {
+                text-transform: capitalize;
+                font-size: p-x( 32 , $main-account-vw , 100 , 760 );
+                font-weight: 450;
+
+                display: block;
+                width: max-content;
+                color: $white;
+                padding: p-x( 5 , $main-account-vw , 100 , 760 )  p-x( 15 , $main-account-vw , 100 , 760 );
+
+                background-color: $theme_primaryBlack;
+            }
+
+
+            .follow-info-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                place-items: center;
+
+                .followers-h, .following-h {
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    height: max-content;
+                    width: max-content;
+                    margin: 0 p-x( 10 , $main-account-vw , 100 , 760 );
+                    
+                    h2 {
+                        font-size: p-x( 24 , $main-account-vw , 100 , 760 );
+                        text-transform: capitalize;
+                    }
+
+                    span {
+                        font-size: p-x( 18 , $main-account-vw , 100 , 760 );
+                        font-weight: 500;
+                    }
+                }
+            }
+
+
+            .blog-info-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                place-items: center;
+
+                .no-of-blogs-div, .no-of-views-div, .no-of-Likes-div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    height: max-content;
+                    width: max-content;
+                    margin: 0 p-x( 10 , $main-account-vw , 100 , 760 );
+                    
+                    h2 {
+                        font-size: p-x( 24 , $main-account-vw , 100 , 760 );
+                        text-transform: capitalize;
+                    }
+
+                    span {
+                        font-size: p-x( 18 , $main-account-vw , 100 , 760 );
+                        font-weight: 500;
+                    }     
+                }
+            }
+
+
+        }
+
+
+
+
+        .posts-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 95%;
+            margin-bottom: p-x( 150 , $main-account-vw , 100 , 760 );
+
+            h1 {
+                align-self: flex-start;
+                margin: 0  p-x( 80 , $main-account-vw , 100 , 760 )  p-x( 50 , $main-account-vw , 100 , 760 );
+
+                font-size:  p-x( 32 , $main-account-vw , 100 , 760 );
+                text-transform: capitalize;
+            }
+
+
+
+            .account-blog-gallery {
+        
+                height: max-content;
+                width: 100%;
+                display: grid;
+                grid-template-columns:  repeat( auto-fit , p-x( 308 , $main-account-vw , 100 , 760 ) );
+                grid-template-rows:     repeat( auto-fit , p-x( 438 , $main-account-vw , 100 , 760 ) );
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                grid-column-gap: p-x( 40 , $main-account-vw , 100 , 760 );
+                grid-row-gap:    p-x( 40 , $main-account-vw , 100 , 760 );
+                
+                position: relative;
+            
+            
+                .blog {
+                    @include blog-card($main-account-vw);
+                }
+
+
+
+                button.loading-btn {
+                    height: max-content;
+                    width:  max-content;
+                    border: 4px solid $theme_primaryBlack;
+                    border-radius: 50%;
+        
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: -88px;
+        
+                    padding: 8px;
+        
+                    svg {
+                        display: block;
+                        height: 24px;
+                        width:  24px;
+                    }
+                }
+            }
+   
+        }
+
+
+        
+    }
+
+    .container-close {
+        margin-left: -200%;
+        height: 0;
+    }
+
+
+
+
+    .finfo-cover {
+        display: flex;
+        flex-direction: column;
+
+
+        width: 80%;
+        height: 0;
+        // background-color: $white;
+        padding-top: p-x( 56+30 , $main-account-vw , 100 , 760 );
+        padding-bottom: p-x( 100 , $main-account-vw , 100 , 760 );
+
+        border-right: p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+        border-left:  p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+        transition: 0.5s;
+
+
+
+
+        
+
+        
+        .goback-btn-cover {
+            display: block;
+            height: max-content;
+            width: max-content;
+
+            position: fixed;
+            top: #{' calc( #{$nav-height} + #{p-x( 30 , $main-account-vw , 100 , 760 )} ) '};
+            // top: #{'calc( #{$nav-height} + #{p-x( 30 , $main-account-vw , 100 , 760 )} )'};
+            left: #{'calc(10% - #{p-x( 50 - 2 , $main-account-vw , 100 , 760 )}  )'} ;
+
+
+            .goback-btn {
+                border-top:     p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+                border-bottom:  p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+                border-left:    p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+                border-right:   none;
+    
+                display: none;
+                opacity: 0;
+                transition: 0.5s;
+    
+                padding: p-x( 10 , $main-account-vw , 100 , 760 );
+
+                
+                svg {
+                    display: block;
+                    height: p-x( 26 , $main-account-vw , 100 , 760 );
+                    width:  p-x( 26 , $main-account-vw , 100 , 760 );
+                }
+            }
+        }
+
+
+
+
+
+
+        .tab-bar-cover {
+            align-self: center;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+
+            width: 80%;
+            height: p-x( 56+30 , $main-account-vw , 100 , 760 )  ;
+            background-color: $white;
+
+            border-right: p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+            border-left:  p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+            position: fixed;
+            top: $nav-height;
+            z-index: 50;
+
+    
+            table.tab-bar {
+                width: 100% + 0.26041667% + 0.26041667%;
+                border-collapse: collapse;
+
+                tr {
+                
+                    td {
+                        border: p-x( 2 , $main-account-vw , 100 , 760 ) solid $theme_primaryBlack;
+                
+
+
+                        .followers-tab, .following-tab {
+                            display: grid;
+                            place-items: center;
+    
+                            height: p-x( 56 , $main-account-vw , 100 , 760 );
+                            width: 100%;
+                            text-align: center;
+                
+                            span {
+                                display: grid;
+                                justify-items: center;
+                
+                                height: 65%;
+                                width: max-content;
+                                padding: 0 p-x( 15 , $main-account-vw , 100 , 760 );
+                                font-size: p-x( 24 , $main-account-vw , 100 , 760 );
+                
+                                position: relative;
+                
+                                &::after {
+                                    content: '';
+                
+                                    position: absolute;
+                
+                                    bottom: 0;
+                                    opacity: 0;
+                                    display: block;
+                                    height: p-x( 2 , $main-account-vw , 100 , 760 );
+                                    width:  0;
+                                    background-color: $theme_primaryBlack;
+                                    transition: 0.3s;
+                                }
+                
+                            }
+                
+    
+    
+                            &:hover {
+    
+                                span {
+                                    &::after {
+                                        opacity: 1;
+                                        width:  100%;
+                                        background-color: $theme_primaryBlack;
+                                    }   
+                                }
+                            }
+                        }
+    
+    
+    
+                
+                        .active-fTabs {
+    
+                            background-color: $theme_primaryBlack;
+                            color: $white;
+    
+                            &:hover {
+    
+                                span {
+                                    &::after {
+                                        background-color: $white;
+                                    }   
+                                }
+                            }  
+                        }
+                
+    
+    
+                        
+                      
+                    }
+                }
+    
+            }
+        }
+
+
+
+
+        .tab-contents {
+            display: block;
+            width: 100%;
+            height: max-content;
+
+
+            .follower-div, .following-div {
+                display: none;
+                grid-template-columns:  repeat(auto-fit, max-content );
+                grid-auto-rows: max-content;
+                grid-row-gap:     p-x( 8 , $main-account-vw , 100 , 760 );
+                align-items: center;
+                justify-items: center;
+                justify-content: center;
+                margin: p-x( 40 , $main-account-vw , 100 , 760 ) 0 p-x( 100 , $main-account-vw , 100 , 760 );
+            
+                height: max-content;
+                width: 100%;
+
+
+
+                
+                position: relative;
+
+
+                button.loading-btn {
+                    height: max-content;
+                    width:  max-content;
+                    border: 4px solid $theme_primaryBlack;
+                    border-radius: 50%;
+        
+                    position: absolute;
+                    bottom: 0;
+                    margin-bottom: -88px;
+        
+                    padding: 8px;
+        
+                    svg {
+                        display: block;
+                        height: 24px;
+                        width:  24px;
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+                .follower-author-card-cont {
+                    @include author-card-cont( $main-account-vw );
+
+                    grid-template-columns: max-content 1fr max-content;
+
+                    padding: p-x( 5 , $main-account-vw , 100 , 760 ) p-x( 20 , $main-account-vw , 100 , 760 ) p-x( 5 , $main-account-vw , 100 , 760 ) ;
+                    
+                    border-radius: 0 0 ;
+                    width: p-x( 529 , $main-account-vw , 100 , 760 );
+
+                    .user-name {
+                        font-weight: 450;
+                        justify-self: flex-start;
+                    }
+
+
+                    .remove-btn {
+                        display: block;
+                        height: max-content;
+                        width:  max-content;
+                        padding: p-x( 10 , $main-account-vw , 100 , 760 );
+                        border-radius: 50%;
+
+                        svg {
+                            display: block;
+                            height: p-x( 26 , $main-account-vw , 100 , 760 );
+                            width: p-x( 26 , $main-account-vw , 100 , 760 );
+                        }
+
+                        &:hover {
+                            background-color: #00000022;
+                        }
+                    }
+                }
+
+
+                .following-author-card-cont {
+                    @include author-card-cont( $main-account-vw );
+
+                    grid-template-columns: max-content 1fr max-content;
+
+                    padding: p-x( 5 , $main-account-vw , 100 , 760 ) p-x( 20 , $main-account-vw , 100 , 760 ) p-x( 5 , $main-account-vw , 100 , 760 ) ;
+                    
+                    border-radius: 0 0 ;
+                    width: p-x( 529 , $main-account-vw , 100 , 760 );
+
+                    .user-name {
+                        font-weight: 450;
+                        justify-self: flex-start;
+                    }
+
+
+                    .mute-div {
+                        display: block;
+                        height: max-content;
+                        width:  max-content;
+                        padding: p-x( 10 , $main-account-vw , 100 , 760 );
+                        border-radius: 50%;
+
+                        svg {
+                            display: block;
+                            height: p-x( 26 , $main-account-vw , 100 , 760 );
+                            width: p-x( 26 , $main-account-vw , 100 , 760 );
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+
+
+
+    }
+
+    .finfo-cover-open {
+        
+        margin-left: -200%;
+        height: max-content;
+        min-height: 100%;
+
+        
+        .goback-btn-cover {
+
+            .goback-btn {
+                transition: 0.5s;
+                display: block;
+                opacity: 1;
+            }
+        }
+
+    }
+
+
+
+}
+
+
+
+
+.display-none {
+    display: none;
+}

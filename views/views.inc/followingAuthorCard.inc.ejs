@@ -1,0 +1,12 @@
+<a href="/viewaccount/<%= authorID %>" class="following-author-card-cont">
+    <img src="<%= profileImg %>" alt="" class="profile-img">
+    <h1 class="user-name"><%= userName %></h1>
+
+    <% 
+        if (muted == true) {
+    %> 
+        <div class="mute-div"><i class="fas fa-comment-slash"></i></div>
+    <% 
+    }
+    %> 
+</a>

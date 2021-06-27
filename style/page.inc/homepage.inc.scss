@@ -1,0 +1,240 @@
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/blog-card.inc.scss";
+@import "../style.inc/variables.inc.scss";
+@import "../style.inc/color.inc.scss";
+
+
+
+
+.sidebar-home {
+    $sidebar-home-vw: 70;
+
+    position: fixed;
+    top: $nav-height;
+    min-height: #{'calc(100vh - #{$nav-height})'}; ;
+    height: 100%;
+    width: 20%;
+    background-color: $theme_gold;
+    border-right: p-x( 2 , $sidebar-home-vw , 100 , 760 ) solid $theme_primaryBlack ;
+    padding: p-x( 22 , $sidebar-home-vw , 100 , 760 ) p-x( 70 , 30 , 100 , 760 ) 0 ;
+
+    h2.sidebar-board {
+        font-weight: 500;
+        display: block;
+        height: p-x( 40 , $sidebar-home-vw , 100 , 760 );
+        width: p-x( 123 , $sidebar-home-vw , 100 , 760 );
+        background-color: $theme_primaryBlack;
+        color: $white;
+        font-size: p-x( 24 , $sidebar-home-vw , 100 , 760 );        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: p-x( 45 , $sidebar-home-vw , 100 , 760 );
+    }
+
+    .extend-dwn {
+        display: none;
+    }
+
+
+    // .activity-opts-sugg, .activity-opts-your, .activity-opts-like {
+    [class^=activity-opts] {
+        text-decoration: none;
+        font-size: p-x( 20 , $sidebar-home-vw , 100 , 760 );
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: p-x( 45 , $sidebar-home-vw , 100 , 760 );
+        width: 100%;
+        color: $theme_fontBlack;
+        border-radius: p-x( 5 , $sidebar-home-vw , 100 , 760 );
+        margin-top: p-x( 15 , $sidebar-home-vw , 100 , 760 );
+        background-color: $white;
+        position: relative;
+        transition: 0.2s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: p-x( 8 , $sidebar-home-vw , 100 , 760 );
+            height: p-x( 2 , $sidebar-home-vw , 100 , 760 );
+            width: 0;
+            background-color: $theme_primaryBlack;
+            transition: 0.2s;
+        }
+
+        &:hover {
+            &::after {
+                // width: p-x( 150 , $sidebar-home-vw , 100 , 760 );
+                width: 80%;
+            }
+            padding-bottom: p-x( 8 , $sidebar-home-vw , 100 , 760 );
+        }
+    }
+
+    .active-opt {
+        background-color: $theme_primaryBlack;
+        color: $white;
+        &::after {
+            background-color: $white;
+        }
+    }
+
+
+    .create-blog-btn {
+        all: unset;
+
+        cursor: pointer;
+        margin-top: p-x( 70 , $sidebar-home-vw , 100 , 760 );
+        height: p-x( 42 , $sidebar-home-vw , 100 , 760 );
+        width: 100%;
+        background-color: $white;
+        border-radius: p-x( 5000 , $sidebar-home-vw , 100 , 760 );
+        font-size: p-x( 20 , $sidebar-home-vw , 100 , 760 );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+
+
+        &:hover {
+            background-color: $theme_primaryBlack;
+            color: $white;
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-home {
+    $main-home-vw: 80;
+
+    margin-top: $nav-height;
+    min-height: #{'calc(100vh - #{$nav-height})'};
+    margin-left: 20%;
+    width: 80%;
+    
+    padding-bottom: 56px;
+
+    display: flex;
+    flex-direction: column;
+
+    .opts-btn-margin-div {
+        display: none;
+    }
+
+    .display {
+        position: fixed;
+        width: 100%;
+        z-index: 15;
+        background-color: $white;
+
+        // box-shadow: 0 0 rem( 4 ) $theme_primaryBlack;
+
+        h1.display-h1 {
+            font-weight: 500;
+            font-size: p-x( 32 , $main-home-vw , 100 , 760 );
+            display: flex;
+            align-items: center;
+            padding-left: p-x( 70 , $main-home-vw , 100 , 760 );
+
+            height: p-x( 63 , $main-home-vw , 100 , 760 );
+            width: 100%;
+            text-transform: capitalize;
+            border-bottom: p-x( 2 , $main-home-vw , 100 , 760 ) solid $theme_primaryBlack;
+        }
+
+        h1.display-h1-close {
+            display: none;
+        }
+
+    }
+
+
+
+
+
+    [class ^= blog-gallery-] {
+        align-self: center;
+
+        width: 90%;
+        display: none;
+        grid-template-columns:  repeat( auto-fit , p-x( 308 , $main-home-vw , 100 , 760 ) );
+        grid-template-rows:     repeat( auto-fit , p-x( 438 , $main-home-vw , 100 , 760 ) );
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        grid-column-gap: p-x( 40 , $main-home-vw , 100 , 760 );
+        grid-row-gap:    p-x( 40 , $main-home-vw , 100 , 760 );
+
+        margin: p-x( 40+65 , $main-home-vw , 100 , 760 ) 0 p-x( 40 , $main-home-vw , 100 , 760 );
+        margin-bottom:   p-x( 90 , $main-home-vw , 100 , 760 );
+
+        position: relative;
+
+        .blog {
+            @include blog-card($main-home-vw);
+        }
+
+
+
+
+        button.loading-btn {
+            height: max-content;
+            width:  max-content;
+            border: 4px solid $theme_primaryBlack;
+            border-radius: 50%;
+
+            position: absolute;
+            bottom: 0;
+            margin-bottom: -88px;
+
+            padding: 8px;
+
+            svg {
+                display: block;
+                height: 24px;
+                width:  24px;
+            }
+        }
+    }
+
+
+}

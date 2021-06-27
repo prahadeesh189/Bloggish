@@ -1,0 +1,189 @@
+@import "./style.inc/global.inc.scss";
+
+@import "./style.inc/variables.inc.scss";
+@import "./style.inc/functions.inc.scss";
+@import "./style.inc/color.inc.scss";
+
+
+@media only screen and (min-width: 768px) {
+    @import "./page.inc/nav.inc.scss";
+    @import "./page.inc/login.inc.scss";
+    @import "./page.inc/homepage.inc.scss";
+    @import "./page.inc/explorepage.inc.scss";
+    @import "./page.inc/accountpage.inc.scss";
+    @import "./page.inc/viewpage.inc.scss";
+    @import "./page.inc/wrtiepage.inc.scss";  
+    @import "./page.inc/editpage.inc.scss";  
+    @import "./page.inc/viewAccount.inc.scss"; 
+    @import "./page.inc/searchPage.inc.scss";   
+    @import "./page.inc/hashtagpage.inc.scss"; 
+    @import "./page.inc/getStarted.inc.scss";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px)  {    
+    @import "./page-mobile/nav-mobile.inc.scss";
+    @import "./page-mobile/login-mobile.inc.scss";
+    @import "./page-mobile/home-mobile.inc.scss";
+    @import './page-mobile/account-mobile.inc.scss';
+    @import "./page-mobile/explore-mobile.inc.scss";
+    @import "./page-mobile/view-mobile.inc.scss";
+    @import "./page-mobile/write-mobile.inc.scss";
+    @import "./page-mobile/edit-mobile.inc.scss";
+    @import "./page-mobile/viewAccount-mobile.inc.scss";
+    @import "./page-mobile/search-mobile.inc.scss";
+    @import "./page-mobile/hashtag-mobile.inc.scss";
+    @import "./page-mobile/getStarted-mobile.inc.scss";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

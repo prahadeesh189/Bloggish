@@ -1,0 +1,439 @@
+@import "../style.inc/variables.inc.scss";
+@import "../style.inc/functions.inc.scss";
+@import "../style.inc/color.inc.scss";
+@import "../style.inc/blog-card.inc.scss";
+@import "../style.inc/authorCard.inc.scss";
+
+
+
+
+.sidebar-explore {
+    $sidebar-explore-vw: 70;
+
+    position: fixed;
+    top: $nav-height;
+    left: 0;
+    min-height: #{'calc(100vh - #{$nav-height})'}; ;
+    height: 100%;
+    width: 20%;
+    background-color: $theme_gold;
+    border-right: p-x( 2 , $sidebar-explore-vw , 100 , 760 ) solid $theme_primaryBlack ;
+    padding: p-x( 22 , $sidebar-explore-vw , 100 , 760 ) p-x( 70 , 20 , 100 , 760 ) 0 ;
+
+    h2.sidebar-board {
+        font-weight: 500;
+        display: block;
+        height: p-x( 40 , $sidebar-explore-vw , 100 , 760 );
+        width: p-x( 123 , $sidebar-explore-vw , 100 , 760 );
+        background-color: $theme_primaryBlack;
+        color: $white;
+        font-size: p-x( 24 , $sidebar-explore-vw , 100 , 760 );        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: p-x( 45 , $sidebar-explore-vw , 100 , 760 );
+    }
+
+    .extend-dwn {
+        display: none;
+    }
+
+
+    // .activity-opts-sugg, .activity-opts-your, .activity-opts-like {
+    [class^=activity-opts] {
+        text-decoration: none;
+        font-size: p-x( 20 , $sidebar-explore-vw , 100 , 760 );
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: p-x( 45 , $sidebar-explore-vw , 100 , 760 );
+        width: 100%;
+        color: $theme_fontBlack;
+        border-radius: p-x( 5 , $sidebar-explore-vw , 100 , 760 );
+        margin-top: p-x( 15 , $sidebar-explore-vw , 100 , 760 );
+        background-color: $white;
+        position: relative;
+        transition: 0.2s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: p-x( 8 , $sidebar-explore-vw , 100 , 760 );
+            height: p-x( 2 , $sidebar-explore-vw , 100 , 760 );
+            width: 0;
+            background-color: $theme_primaryBlack;
+            transition: 0.2s;
+        }
+
+        &:hover {
+            &::after {
+                width: p-x( 150 , $sidebar-explore-vw , 100 , 760 );
+            }
+            padding-bottom: p-x( 8 , $sidebar-explore-vw , 100 , 760 );
+        }
+    }
+
+    .active-opt {
+        background-color: $theme_primaryBlack;
+        color: $white;
+        &::after {
+            background-color: $white;
+        }
+    }
+
+
+
+
+}
+
+
+.main-explore {
+    $main-explore-vw: 80;
+
+
+
+    display: block;
+    min-height: #{'calc( 100vh - #{$nav-height} )'};
+    width: 80%;
+    margin-top: $nav-height;
+    margin-left: 20%;
+    float: left;
+
+
+
+
+
+
+    .opts-cont-div {
+        display: none;
+    }
+
+
+
+    .topic, .author, .trend-blogs {
+        margin-top: p-x( 63 , $main-explore-vw , 100 , 760 ) ;
+
+        // min-height:  p-x( 350 , $main-explore-vw , 100 , 760 )  ;
+        height: max-content;
+        // border-bottom: p-x( 2 , $main-explore-vw , 100 , 760 ) solid $theme_primaryBlack;
+        display: none;
+        grid-template-rows: max-content;
+        justify-items: center;
+        padding-bottom: 50px;
+        
+
+
+
+        .topic-cont, .author-cont, .trend-blogs-cont {
+            width: 80%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+            border-bottom: p-x( 2 , $main-explore-vw , 100 , 760 ) solid $theme_primaryBlack;
+
+            position: fixed;
+            top: #{'calc(#{$nav-height} )'} ;
+
+            padding: p-x( 4 , $main-explore-vw , 100 , 760 )     p-x( 24 , $main-explore-vw , 100 , 760 );
+
+            z-index: 8;
+
+            background-color: $white;
+
+            .topic-cover, .author-cover, .trend-blogs-cover {
+                justify-self: left;
+                grid-row: 1/2;
+
+                display: flex;
+                align-items: center;
+                height: p-x( 50 , $main-explore-vw , 100 , 760 );
+                width: max-content;
+                
+
+                h1 {        
+                    display: flex;
+                    align-items: center;
+                    height: max-content;
+                    width:  max-content;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    font-size: p-x( 24 , $main-explore-vw , 100 , 760 );
+
+                    padding: p-x( 4 , $main-explore-vw , 100 , 760 ) p-x( 15 , $main-explore-vw , 100 , 760 );
+
+                    background-color: $theme_primaryBlack;
+                    color: $white;
+                }
+            }
+
+
+
+
+            a.search-btn {
+                justify-self: right;
+
+                text-decoration: none;
+                display: block;
+                height: max-content;
+                width:  max-content;
+                padding: p-x( 8 , $main-explore-vw , 100 , 760 ) p-x( 25 , $main-explore-vw , 100 , 760 );
+                border-radius: p-x( 5000 , $main-explore-vw , 100 , 760 );
+                background-color: $theme_primaryBlack;
+                color: $white;
+
+                svg {
+                    display: block;
+                    height: p-x( 18 , $main-explore-vw , 100 , 760 );
+                    width:  p-x( 18 , $main-explore-vw , 100 , 760 );
+                }
+            }
+
+
+
+        }
+
+
+
+
+
+    
+        .topic-div  {
+            grid-row: 1/2;
+
+            // height: p-x( 255 , $main-explore-vw , 100 , 760 );
+
+            // display: grid;
+            // grid-template-columns: repeat(auto-fit,  p-x( 224 , $main-explore-vw , 100 , 760 ) );
+            // grid-template-rows:    repeat(auto-fit,  61p+16p  );
+            // grid-auto-rows:  p-x( 61+16 , $main-explore-vw , 100 , 760 );
+            // grid-gap: p-x( 16 , $main-explore-vw , 100 , 760 );
+
+            display: flex;
+            flex-wrap: wrap;
+
+
+            // align-items: center;
+            // justify-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            margin: p-x( 40 , $main-explore-vw , 100 , 760 ) 0  p-x( 100 , $main-explore-vw , 100 , 760 );
+        
+            height: max-content;
+            // max-width: 85%;
+            width: 90%;
+            // overflow-y: hidden;
+
+            position: relative;
+
+
+
+
+
+
+
+
+            button.loading-btn {
+
+
+                height: max-content;
+                width:  max-content;
+                border: 4px solid $theme_primaryBlack;
+                border-radius: 50%;
+    
+                position: absolute;
+                bottom: 0;
+
+                margin-left: #{"calc(50% - 24px)"} ;
+                margin-bottom: -88px;
+    
+                padding: 8px;
+    
+                svg {
+                    display: block;
+                    height: 24px;
+                    width:  24px;
+                }
+            }
+
+
+            .topic-cover {
+                all: unset;
+                
+                cursor: pointer;
+                color: $theme_primaryBlack;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: max-content;
+                // width: p-x( 200 , $main-explore-vw , 100 , 760 );
+                width: max-content;
+                background-color: $white;
+                padding: p-x( 10 , $main-explore-vw , 100 , 760 );
+                overflow: hidden;
+
+
+                margin: p-x( 10 , $main-explore-vw , 100 , 760 );
+
+                border: p-x( 2 , $main-explore-vw , 100 , 760 ) solid $theme_primaryBlack;
+                border-radius: p-x( 5000 , $main-explore-vw , 100 , 760 );
+
+                h2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: max-content;
+                    height: 100%;
+                    // max-width: 95%;
+                    font-size: p-x( 24 , $main-explore-vw , 100 , 760 );
+                    font-weight: 450;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        height: p-x( 2 , $main-explore-vw , 100 , 760 );
+                        width: 0;
+                        position: absolute;
+                        bottom: p-x( -5 , $main-explore-vw , 100 , 760 );
+                        background-color: $theme_primaryBlack;
+                        transition: 0.2s;
+                    }
+                }
+
+
+                &:hover {                    
+                    h2 {
+                        margin: 0 0 p-x( 5 , $main-explore-vw , 100 , 760 );
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            
+
+        }
+
+
+
+
+
+        .author-div {
+            grid-row: 1/2;
+
+            display: grid;
+            grid-template-columns:  repeat(auto-fit, p-x( 329+8 , $main-explore-vw , 100 , 760 ) );
+            grid-auto-rows: max-content;
+            grid-column-gap:  p-x( 30 , $main-explore-vw , 100 , 760 );
+            grid-row-gap:     p-x( 30 , $main-explore-vw , 100 , 760 );
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            margin: p-x( 40 , $main-explore-vw , 100 , 760 ) p-x( 40 , $main-explore-vw , 100 , 760 ) p-x( 100 , $main-explore-vw , 100 , 760 );
+        
+            position: relative;
+            height: max-content;
+            width: 90%;
+
+            .author-card-cont {
+                @include author-card-cont( $main-explore-vw );
+            }
+
+
+           
+
+
+
+
+
+            button.loading-btn {
+                height: max-content;
+                width:  max-content;
+                border: 4px solid $theme_primaryBlack;
+                border-radius: 50%;
+    
+                position: absolute;
+                bottom: 0;
+                margin-bottom: -88px;
+    
+                padding: 8px;
+    
+                svg {
+                    display: block;
+                    height: 24px;
+                    width:  24px;
+                }
+            }
+        }
+
+
+
+
+
+
+        .blog-gallery {
+            grid-row: 1/2;
+
+            // align-self: center;
+            width: 90%;
+            display: grid;
+            grid-template-columns:  repeat( auto-fit , p-x( 308 , $main-explore-vw , 100 , 760 ) );
+            // grid-template-rows:     repeat( auto-fit , p-x( 438 , $main-explore-vw , 100 , 760 ) );
+            grid-auto-rows: p-x( 438 , $main-explore-vw , 100 , 760 );
+
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            grid-column-gap: p-x( 40 , $main-explore-vw , 100 , 760 );
+            grid-row-gap:    p-x( 40 , $main-explore-vw , 100 , 760 );
+
+            margin: p-x( 40 , $main-explore-vw , 100 , 760 ) 0;
+            margin-bottom:   p-x( 90 , $main-explore-vw , 100 , 760 );        
+    
+            position: relative;
+
+            .blog {
+                @include blog-card($main-explore-vw);
+            }
+
+
+
+
+
+
+
+            button.loading-btn {
+                height: max-content;
+                width:  max-content;
+                border: 4px solid $theme_primaryBlack;
+                border-radius: 50%;
+    
+                position: absolute;
+                bottom: 0;
+                margin-bottom: -88px;
+    
+                padding: 8px;
+    
+                svg {
+                    display: block;
+                    height: 24px;
+                    width:  24px;
+                }
+            }
+        }
+
+
+
+
+    }   
+
+
+
+
+}
+
+
